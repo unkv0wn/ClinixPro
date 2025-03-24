@@ -1,0 +1,16 @@
+.active {
+  background-color: #3C91E6; /*change color*/
+   
+}
+#icon {
+  color: rgba(0, 0, 0, 0.5); /* cor preta com 50% de transparência */
+  margin-left: 4px;
+}
+
+.active #icon {
+  color: white; /*change color*/
+}
+
+.active span {
+  color: white;
+}

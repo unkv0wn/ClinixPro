@@ -1,0 +1,62 @@
+<main class="flex items-center justify-center min-h-screen">
+  <div
+    class="w-[389px] py-8 px-8 rounded-[8px] shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+  >
+    <logo-component></logo-component>
+    <form class="mt-4" (ngSubmit)="onSubmit()">
+      <!-- Campo Usuario -->
+      <div class="mb-2">
+        <label class="block text-black/60 text-md font-medium mb-2" for="user">
+          Usuário
+        </label>
+        <input
+          class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] font-semibold w-full py-3 px-3 placeholder:text-black/40 text-black/80 text-[16px] leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          type="text"
+          placeholder="Usuário"
+          [(ngModel)]="username"
+          name="username"
+        />
+      </div>
+      <!-- Campo Senha -->
+      <div class="relative mb-2">
+        <label
+          class="block text-black/60 text-md font-medium mb-2"
+          for="password"
+        >
+          Senha
+        </label>
+        <!-- Operador ternario para mostar a senha ou nao -->
+        <input
+          class="appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-[8px] w-full py-3 px-3 text-black/80 mb-3 font-semibold leading-tight focus:outline-none focus:shadow-outline"
+          id="password"
+          placeholder="Senha"
+          [type]="isPasswordVisible ? 'password' : 'text'"
+          [(ngModel)]="password"
+          name="password"
+        />
+        <button
+          class="absolute inset-y-0 right-0 mt-[20px] flex items-center pr-5"
+          (click)="togglePasswordVisibility()"
+          type="button"
+        >
+          <!-- Botao para mostrar e ocultar a senha -->
+          <lucide-angular
+            [img]="isPasswordVisible ? EyeClosed : EyeOpen"
+            class="text-black/50"
+          ></lucide-angular>
+        </button>
+      </div>
+      <!-- Button -->
+      <div class="flex items-center">
+        <button
+          class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-2 w-full rounded-[8px] focus:outline-none focus:shadow-outline"
+          type="submit"
+          routerLink="/dashboard/home"
+        >
+          Entrar
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

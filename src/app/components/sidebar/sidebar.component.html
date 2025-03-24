@@ -1,0 +1,88 @@
+<main>
+  <aside
+    class="flex flex-col w-[296px] shadow-[0_0_8px_rgba(0,0,0,0.25)] h-screen"
+  >
+    <header class="mt-8 flex items-center justify-center relative">
+      <logo-component></logo-component>
+      <button
+        class="absolute w-10 -right-5 inset-y-0 flex items-center justify-center pr-0 shadow-[0_0_8px_rgba(0,0,0,0.25)] rounded-full bg-white"
+        aria-label="Voltar"
+      >
+        <lucide-angular
+          [img]="ArrowBigLeft"
+          class="text-black/50"
+          [size]="32"
+        ></lucide-angular>
+      </button>
+    </header>
+
+    <!-- Itens da SideBar -->
+    <nav class="mt-5 mx-3 font-primary flex flex-col justify-between flex-grow">
+      <!-- Categoria -->
+      <p class="text-[14px] text-black/30 font-bold">Painel Principal</p>
+
+      <!-- Página Inicial -->
+      <!-- <button
+        class="mt-2 bg-blue-primary rounded-md text-xs font-medium text-black/50 p-2 w-full cursor-pointer"
+        type="button"
+        onclick="alert('Clicou na página principal')"
+        aria-label="Página principal"
+      >
+        <div class="flex flex-row items-center justify-start">
+          <lucide-angular
+            [img]="LayoutDashboard"
+            class="text-white ml-1"
+            [size]="24"
+          ></lucide-angular>
+          <span class="ml-2 text-base font-semibold text-white"
+            >Página principal</span
+          >
+        </div>
+      </button> -->
+      <MenuButton
+        [buttonText]="'Pagina principal'"
+        [icon]="LayoutDashboard"
+        [routerLink]="['/index']"
+      ></MenuButton>
+
+      <!-- Painel de agendamentos -->
+      <MenuButton
+        [buttonText]="'Agendamentos'"
+        [icon]="NotbookText"
+        routerLink="/agendamentos"
+      ></MenuButton>
+
+      <!-- Painel de Financeiro -->
+      <MenuButton
+        [buttonText]="'Financeiro'"
+        [icon]="WalletCardsIcon"
+        routerLink="/financeiro"
+      ></MenuButton>
+
+      <!-- Botão Sair -->
+      <footer class="flex items-baseline justify-baseline mt-auto mb-7">
+        <!-- <button
+          class="mt-2 bg-black/3 rounded-md text-xs font-medium text-black/50 p-2 w-full cursor-pointer"
+          type="button"
+          onclick="alert('Clicou em Sair')"
+          aria-label="Sair"
+        >
+          <div class="flex flex-row items-center justify-start">
+            <lucide-angular
+              [img]="LogOut"
+              class="text-black/50 ml-1"
+              [size]="24"
+            ></lucide-angular>
+            <span class="ml-2 text-base font-semibold text-black/50">Sair</span>
+          </div>
+        </button> -->
+        <MenuButton
+          class="w-full"
+          [buttonText]="'Sair'"
+          [icon]="LogOut"
+          routerLink="/index"
+        ></MenuButton>
+      </footer>
+    </nav>
+  </aside>
+</main>
