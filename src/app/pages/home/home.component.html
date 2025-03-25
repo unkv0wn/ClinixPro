@@ -1,1 +1,88 @@
-<p class="flex items-center justify-center">home works!</p>
+<body class="flex h-screen">
+  <!-- Lado esquerdo - Agendamentos -->
+  <section class="w-1/2 flex justify-center items-start">
+    <article
+      class="bg-white w-full h-2/3 mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+    >
+      <header class="flex flex-row mb-4">
+        <lucide-angular
+          [img]="NotebookPen"
+          class="text-blue-primary"
+          [size]="24"
+        ></lucide-angular>
+        <h2 class="font-medium text-base ml-1 text-black/50">Agendamentos</h2>
+      </header>
+
+      <!-- Lista de agendamentos do dia -->
+      <ul>
+        <li *ngFor="let appointment of appointments">
+          <div
+            class="flex items-center justify-between p-2 border-2 rounded-lg border-black/10 shadow-[0_0_4px_rgba(0,0,0,0.25)] mt-2"
+          >
+            <div class="flex items-center">
+              <lucide-angular
+                [img]="Clock"
+                class="text-blue-primary"
+                [size]="24"
+              ></lucide-angular>
+              <time class="ml-3 text-lg font-semibold text-black/50">
+                {{ appointment.time }}
+              </time>
+            </div>
+            <button class="text-black/70 rounded-full p-1" aria-label="Voltar">
+              <lucide-angular [img]="ChevronLeft" [size]="24"></lucide-angular>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- Lado direito - Conteúdo adicional -->
+  <aside class="w-1/2 flex flex-col items-start mt-10 mr-11">
+    <div
+      class="bg-amber-200 w-full h-1/4 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+    >
+      <h1>Calendario</h1>
+    </div>
+    <!-- Anotações -->
+    <div
+      class="w-full h-2/4 mt-10 rounded-lg p-8 shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+    >
+      <!-- Titulo -->
+      <div class="flex items-start justify-between">
+        <div class="flex items-center">
+          <lucide-angular
+            [img]="Pin"
+            class="text-blue-primary"
+            [size]="24"
+          ></lucide-angular>
+          <h2 class="text-lg ml-2 font-semibold text-black/50 leading-none">
+            Anotações
+          </h2>
+        </div>
+        <button class="text-black/70 rounded-full p-1" aria-label="Voltar">
+          <lucide-angular [img]="Plus" [size]="24"></lucide-angular>
+        </button>
+      </div>
+
+      <!-- Conteudo -->
+      <ul>
+        <li *ngFor="let notion of notions">
+          <div
+            class="flex items-center justify-between p-2 border-2 rounded-lg border-black/10 shadow-[0_0_4px_rgba(0,0,0,0.25)] mt-2"
+          >
+            <div class="flex items-center">
+              <span class="ml-1 text-base font-semibold text-black/50">
+                {{ notion.message }}
+              </span>
+            </div>
+            <button class="text-black/70 rounded-full p-1" aria-label="Voltar">
+              <lucide-angular [img]="Trash" [size]="24"></lucide-angular>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</body>
