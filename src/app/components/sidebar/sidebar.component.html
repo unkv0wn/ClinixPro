@@ -22,23 +22,6 @@
       <p class="text-[14px] text-black/30 font-bold">Painel Principal</p>
 
       <!-- Página Inicial -->
-      <!-- <button
-        class="mt-2 bg-blue-primary rounded-md text-xs font-medium text-black/50 p-2 w-full cursor-pointer"
-        type="button"
-        onclick="alert('Clicou na página principal')"
-        aria-label="Página principal"
-      >
-        <div class="flex flex-row items-center justify-start">
-          <lucide-angular
-            [img]="LayoutDashboard"
-            class="text-white ml-1"
-            [size]="24"
-          ></lucide-angular>
-          <span class="ml-2 text-base font-semibold text-white"
-            >Página principal</span
-          >
-        </div>
-      </button> -->
       <MenuButton
         [buttonText]="'Pagina principal'"
         [icon]="LayoutDashboard"
@@ -61,21 +44,6 @@
 
       <!-- Botão Sair -->
       <footer class="flex items-baseline justify-baseline mt-auto mb-7">
-        <!-- <button
-          class="mt-2 bg-black/3 rounded-md text-xs font-medium text-black/50 p-2 w-full cursor-pointer"
-          type="button"
-          onclick="alert('Clicou em Sair')"
-          aria-label="Sair"
-        >
-          <div class="flex flex-row items-center justify-start">
-            <lucide-angular
-              [img]="LogOut"
-              class="text-black/50 ml-1"
-              [size]="24"
-            ></lucide-angular>
-            <span class="ml-2 text-base font-semibold text-black/50">Sair</span>
-          </div>
-        </button> -->
         <MenuButton
           class="w-full"
           [buttonText]="'Sair'"

@@ -50,18 +50,21 @@
       class="w-full h-2/4 mt-10 rounded-lg p-8 shadow-[0_0_8px_rgba(0,0,0,0.25)]"
     >
       <!-- Titulo -->
-      <div class="flex items-start justify-between">
+      <div class="flex items-start justify-between m-0">
         <div class="flex items-center">
           <lucide-angular
             [img]="Pin"
             class="text-blue-primary"
             [size]="24"
           ></lucide-angular>
-          <h2 class="text-lg ml-2 font-semibold text-black/50 leading-none">
+          <h2 class="text-base ml-2 font-semibold text-black/50 leading-none">
             Anotações
           </h2>
         </div>
-        <button class="text-black/70 rounded-full p-1" aria-label="Voltar">
+        <button
+          class="text-black/70 mr-2.5 p-1 hover:text-blue-primary"
+          aria-label="Voltar"
+        >
           <lucide-angular [img]="Plus" [size]="24"></lucide-angular>
         </button>
       </div>
