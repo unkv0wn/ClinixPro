@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { IndexComponent } from './pages/index/index.component';
 import { LoginComponent } from './pages/login/login.component';
-import { HomeComponent } from "./pages/home/home.component";
+import { IndexComponent } from './pages/index/index.component';
 
 @Component({
   selector: 'app-root',
-  imports: [LoginComponent],
+  imports: [IndexComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

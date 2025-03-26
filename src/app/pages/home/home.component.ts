@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+
 import {
   LucideAngularModule,
   Clock,
@@ -9,8 +10,8 @@ import {
   ChevronDown,
   Pin,
   Trash2,
-  Trash,
 } from 'lucide-angular';
+
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,8 @@ export class HomeComponent {
   readonly ChevronDown = ChevronDown;
   readonly Pin = Pin;
   readonly Trash = Trash2;
+
+  date: Date[] | undefined;
 
   appointments = [
     { time: '08:00' },
@@ -43,6 +46,8 @@ export class HomeComponent {
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
   ];
+
+
 
   constructor() {}
 }

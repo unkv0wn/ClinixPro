@@ -10,3 +10,6 @@
   --color-text-dark: #272727ff;
   --color-background: #ffffff;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

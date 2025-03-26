@@ -25,7 +25,6 @@ export class LoginComponent {
   onSubmit() {
     console.log('Usuário:', this.username);
     console.log('Senha:', this.password);
-    //Router.navigate(['/index']);
   }
 
 }
