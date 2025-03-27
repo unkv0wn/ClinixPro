@@ -30,17 +30,17 @@
               </time>
             </div>
             <button
-              class="text-black/70 rounded-full transition-transform duration-300"
+              class="text-black/70 rounded-full p-1 transition-normal duration-1000 overflow-hidden ease-in-out"
+              [class.rotate-270]="isOpen === i"
               aria-label="Expandir"
               (click)="showInfo(i)"
             >
               <lucide-angular
                 [img]="ChevronLeft"
-                class="text-black/50 transition-transform duration-300"
+                class="text-black/50"
                 [size]="32"
-                [class.rotate-180]="isRotate === true"
-              >
-              </lucide-angular>
+                [class.rotate-180]="isRotated"
+              ></lucide-angular>
             </button>
           </div>
 

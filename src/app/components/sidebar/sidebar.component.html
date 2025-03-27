@@ -10,12 +10,12 @@
 
     <button
       class="absolute top-10 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-lg transition-all duration-500"
-      [ngClass]="isCollapsed ? 'left-[60px]' : 'left-[280px]'"
+      [ngClass]="isCollapsed ? 'left-[60px]' : 'left-[275px]'"
       (click)="toggleSidebar()"
     >
       <lucide-angular
         [img]="ArrowBigLeft"
-        class="text-black/50 transition-transform duration-300 rotate-180"
+        class="text-black/50 transition-transform duration-300"
         [size]="32"
         [class.rotate-180]="isCollapsed"
       ></lucide-angular>
@@ -65,6 +65,4 @@
       </footer>
     </nav>
   </aside>
-
-  <!-- Botão fixo para minimizar/maximizar a sidebar -->
 </main>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { ChangeDetectorRef } from '@angular/core';
 import {
   LucideAngularModule,
   Clock,
@@ -47,14 +47,13 @@ export class HomeComponent {
   ];
 
   isOpen: number | null = null;
-  isRotate: boolean = false
-
+  isRotated: boolean = false;
 
   showInfo(index: number) {
     this.isOpen = this.isOpen === index ? null : index;
-    this.isRotate = !this.isRotate
-    console.log(this.isRotate)
+    this.isRotated = !this.isRotated;
+
   }
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 }
