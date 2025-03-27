@@ -12,7 +12,6 @@ import {
   Trash2,
 } from 'lucide-angular';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -47,7 +46,11 @@ export class HomeComponent {
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
   ];
 
+  expandedIndex: number | null = null;
 
+  toggleDetails(index: number) {
+    this.expandedIndex = this.expandedIndex === index ? null : index;
+  }
 
   constructor() {}
 }

@@ -15,7 +15,7 @@
 
       <!-- Lista de agendamentos do dia -->
       <ul>
-        <li *ngFor="let appointment of appointments">
+        <li *ngFor="let appointment of appointments; let i = index">
           <div
             class="flex items-center justify-between p-2 border-2 rounded-lg border-black/10 shadow-[0_0_4px_rgba(0,0,0,0.25)] mt-2"
           >
@@ -25,13 +25,32 @@
                 class="text-blue-primary"
                 [size]="24"
               ></lucide-angular>
-              <time class="ml-3 text-lg font-semibold text-black/50">
+              <time class="ml-3 text-base font-semibold text-black/50">
                 {{ appointment.time }}
               </time>
             </div>
-            <button class="text-black/70 rounded-full p-1" aria-label="Voltar">
-              <lucide-angular [img]="ChevronLeft" [size]="24"></lucide-angular>
+            <button
+              class="text-black/70 rounded-full p-1 transition-transform duration-300"
+              (click)="toggleDetails(i)"
+              aria-label="Expandir"
+            >
+              <lucide-angular
+                [img]="expandedIndex === i ? ChevronDown : ChevronLeft"
+                [size]="24"
+                [class.rotate-180]="expandedIndex === i"
+              >
+              </lucide-angular>
             </button>
+          </div>
+
+          <!-- Container que aparece ao clicar -->
+          <div
+            *ngIf="expandedIndex === i"
+            class="p-4 bg-gray-100 rounded-lg mt-2 shadow"
+          >
+            <p class="text-sm text-gray-600">
+              Detalhes do agendamento de {{ appointment.time }}
+            </p>
           </div>
         </li>
       </ul>
@@ -73,7 +92,10 @@
                 {{ notion.message }}
               </span>
             </div>
-            <button class="text-black/70 rounded-full p-1" aria-label="Voltar">
+            <button
+              class="text-black/70 hover:text-blue-primary rounded-full p-1"
+              aria-label="Voltar"
+            >
               <lucide-angular [img]="Trash" [size]="24"></lucide-angular>
             </button>
           </div>
