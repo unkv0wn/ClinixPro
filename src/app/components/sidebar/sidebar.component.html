@@ -1,56 +1,70 @@
-<main>
+<main class="relative">
   <aside
-    class="flex flex-col w-[296px] shadow-[0_0_8px_rgba(0,0,0,0.25)] h-screen"
+    class="flex flex-col shadow-[0_0_8px_rgba(0,0,0,0.25)] h-screen transition-all duration-500"
+    [class.w-[296px]]="!isCollapsed"
+    [class.w-[80px]]="isCollapsed"
   >
     <header class="mt-8 flex items-center justify-center relative">
-      <logo-component></logo-component>
-      <button
-        class="absolute w-10 -right-5 inset-y-0 flex items-center justify-center pr-0 shadow-[0_0_8px_rgba(0,0,0,0.25)] rounded-full bg-white"
-        aria-label="Voltar"
-      >
-        <lucide-angular
-          [img]="ArrowBigLeft"
-          class="text-black/50"
-          [size]="32"
-        ></lucide-angular>
-      </button>
+      <logo-component *ngIf="!isCollapsed"></logo-component>
     </header>
 
-    <!-- Itens da SideBar -->
-    <nav class="mt-5 mx-3 font-primary flex flex-col justify-between flex-grow">
-      <!-- Categoria -->
-      <p class="text-[14px] text-black/30 font-bold">Painel Principal</p>
+    <button
+      class="absolute top-10 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-lg transition-all duration-500"
+      [ngClass]="isCollapsed ? 'left-[60px]' : 'left-[280px]'"
+      (click)="toggleSidebar()"
+    >
+      <lucide-angular
+        [img]="ArrowBigLeft"
+        class="text-black/50 transition-transform duration-300 rotate-180"
+        [size]="32"
+        [class.rotate-180]="isCollapsed"
+      ></lucide-angular>
+    </button>
 
-      <!-- Página Inicial -->
+    <!-- Itens da SideBar -->
+    <nav
+      class="mx-3 font-primary flex flex-col justify-between flex-grow"
+      [ngClass]="isCollapsed ? 'mt-10' : 'mt-5'"
+    >
+      <p
+        class="text-[14px] text-black/30 font-bold"
+        [class.hidden]="isCollapsed"
+      >
+        Painel Principal
+      </p>
+
       <MenuButton
-        [buttonText]="'Pagina principal'"
+        [buttonText]="isCollapsed ? '' : 'Pagina principal'"
         [icon]="LayoutDashboard"
         [routerLink]="['/index']"
+        [isCollapsed]="isCollapsed"
       ></MenuButton>
 
-      <!-- Painel de agendamentos -->
       <MenuButton
-        [buttonText]="'Agendamentos'"
+        [buttonText]="isCollapsed ? '' : 'Agendamentos'"
         [icon]="NotbookText"
         routerLink="/agendamentos"
+        [isCollapsed]="isCollapsed"
       ></MenuButton>
 
-      <!-- Painel de Financeiro -->
       <MenuButton
-        [buttonText]="'Financeiro'"
+        [buttonText]="isCollapsed ? '' : 'Financeiro'"
         [icon]="WalletCardsIcon"
         routerLink="/financeiro"
+        [isCollapsed]="isCollapsed"
       ></MenuButton>
 
-      <!-- Botão Sair -->
       <footer class="flex items-baseline justify-baseline mt-auto mb-7">
         <MenuButton
           class="w-full"
-          [buttonText]="'Sair'"
+          [buttonText]="isCollapsed ? '' : 'Sair'"
           [icon]="LogOut"
           routerLink="/index"
+          [isCollapsed]="isCollapsed"
         ></MenuButton>
       </footer>
     </nav>
   </aside>
+
+  <!-- Botão fixo para minimizar/maximizar a sidebar -->
 </main>

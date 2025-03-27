@@ -6,13 +6,19 @@ import {
   LayoutDashboard,
   NotebookText,
   Banknote,
-  LogOut
+  LogOut,
 } from 'lucide-angular';
 import { MenuButtonComponent } from '../modals/menu-button/menu-button.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [LogoComponent, LucideAngularModule, MenuButtonComponent],
+  imports: [
+    LogoComponent,
+    LucideAngularModule,
+    MenuButtonComponent,
+    CommonModule,
+  ],
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent {
@@ -23,9 +29,14 @@ export class SidebarComponent {
   readonly LogOut = LogOut;
   isSelected = false;
 
+  isCollapsed = false;
+
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
   alertaa() {
     this.isSelected = !this.isSelected;
     alert('Clicou no botão!');
   }
 }
-

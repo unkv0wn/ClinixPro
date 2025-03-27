@@ -46,10 +46,14 @@ export class HomeComponent {
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
   ];
 
-  expandedIndex: number | null = null;
+  isOpen: number | null = null;
+  isRotate: boolean = false
 
-  toggleDetails(index: number) {
-    this.expandedIndex = this.expandedIndex === index ? null : index;
+
+  showInfo(index: number) {
+    this.isOpen = this.isOpen === index ? null : index;
+    this.isRotate = !this.isRotate
+    console.log(this.isRotate)
   }
 
   constructor() {}

@@ -30,14 +30,15 @@
               </time>
             </div>
             <button
-              class="text-black/70 rounded-full p-1 transition-transform duration-300"
-              (click)="toggleDetails(i)"
+              class="text-black/70 rounded-full transition-transform duration-300"
               aria-label="Expandir"
+              (click)="showInfo(i)"
             >
               <lucide-angular
-                [img]="expandedIndex === i ? ChevronDown : ChevronLeft"
-                [size]="24"
-                [class.rotate-180]="expandedIndex === i"
+                [img]="ChevronLeft"
+                class="text-black/50 transition-transform duration-300"
+                [size]="32"
+                [class.rotate-180]="isRotate === true"
               >
               </lucide-angular>
             </button>
@@ -45,7 +46,7 @@
 
           <!-- Container que aparece ao clicar -->
           <div
-            *ngIf="expandedIndex === i"
+            *ngIf="isOpen === i"
             class="p-4 bg-gray-100 rounded-lg mt-2 shadow"
           >
             <p class="text-sm text-gray-600">

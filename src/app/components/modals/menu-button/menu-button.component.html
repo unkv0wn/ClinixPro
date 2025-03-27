@@ -4,15 +4,10 @@
   [routerLink]="routerLink"
   routerLinkActive="active"
 >
-  <div class="flex flex-row items-center justify-start">
-    <lucide-angular
-      id="icon"
-      [img]="icon"
-      [size]="24"
-    ></lucide-angular>
-    <span
-      class="ml-2 text-base font-semibold text-black/50 "
-      >{{ buttonText }}</span
-    >
+  <div class="flex flex-row items-center" [ngClass]="{'justify-center': isCollapsed, 'justify-start': !isCollapsed}">
+    <lucide-angular id="icon" [img]="icon" [size]="24"></lucide-angular>
+    <span class="ml-2 text-base font-semibold text-black/50" *ngIf="!isCollapsed">
+      {{ buttonText }}
+    </span>
   </div>
 </button>
