@@ -1,14 +1,32 @@
 <main class="relative">
+  <div
+    class="absolute w-screen h-10 flex justify-start items-center bg-white"
+    *ngIf="isMobile"
+  >
+    <button class="pl-2 transition-all duration-500" (click)="toggleSidebar()">
+      <lucide-angular
+        [img]="MenuIcon"
+        class="text-black/50 transition-transform duration-300"
+        [size]="32"
+      ></lucide-angular>
+    </button>
+  </div>
+
   <aside
-    class="flex flex-col shadow-[0_0_8px_rgba(0,0,0,0.25)] h-screen transition-all duration-500"
+    class="flex flex-col shadow-[0_0_8px_rgba(0,0,0,0.25)] h-screen transition-all duration-500 mb-8"
     [class.w-[296px]]="!isCollapsed"
     [class.w-[80px]]="isCollapsed"
+    [class.fixed]="isMobile"
+    [class.mt-10]="isMobile"
+    [class.bg-white]="isMobile"
+    [class.-translate-x-full]="isMobile && !isCollapsed"
   >
     <header class="mt-8 flex items-center justify-center relative">
       <logo-component *ngIf="!isCollapsed"></logo-component>
     </header>
 
     <button
+      *ngIf="!isMobile"
       class="absolute top-10 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-lg transition-all duration-500"
       [ngClass]="isCollapsed ? 'left-[60px]' : 'left-[275px]'"
       (click)="toggleSidebar()"
@@ -24,7 +42,7 @@
     <!-- Itens da SideBar -->
     <nav
       class="mx-3 font-primary flex flex-col justify-between flex-grow"
-      [ngClass]="isCollapsed ? 'mt-10' : 'mt-5'"
+      [ngClass]="isCollapsed ? 'md:mt-10' : 'mt-5'"
     >
       <p
         class="text-[14px] text-black/30 font-bold"
@@ -38,6 +56,7 @@
         [icon]="LayoutDashboard"
         [routerLink]="['/index']"
         [isCollapsed]="isCollapsed"
+        (click)="isMobile && toggleSidebar()"
       ></MenuButton>
 
       <MenuButton
@@ -45,6 +64,7 @@
         [icon]="NotbookText"
         routerLink="/agendamentos"
         [isCollapsed]="isCollapsed"
+        (click)="isMobile && toggleSidebar()"
       ></MenuButton>
 
       <MenuButton
@@ -52,15 +72,19 @@
         [icon]="WalletCardsIcon"
         routerLink="/financeiro"
         [isCollapsed]="isCollapsed"
+        (click)="isMobile && toggleSidebar()"
       ></MenuButton>
 
-      <footer class="flex items-baseline justify-baseline mt-auto mb-7">
+      <footer
+        class="flex items-baseline justify-baseline mt-auto mb-14 md:mb-7"
+      >
         <MenuButton
           class="w-full"
           [buttonText]="isCollapsed ? '' : 'Sair'"
           [icon]="LogOut"
           routerLink="/index"
           [isCollapsed]="isCollapsed"
+          (click)="isMobile && toggleSidebar()"
         ></MenuButton>
       </footer>
     </nav>

@@ -30,12 +30,42 @@ export class HomeComponent {
   date: Date[] | undefined;
 
   appointments = [
-    { time: '08:00' },
-    { time: '08:30' },
-    { time: '09:00' },
-    { time: '11:00' },
-    { time: '12:00' },
-    // ...add more appointments as needed
+    {
+      time: '08:00',
+      paciente: 'João Silva',
+      telefone: '11 98765-4321',
+      tipoConsulta: 'Retorno',
+      valorTotal: 100.00,
+    },
+    {
+      time: '08:30',
+      paciente: 'Maria Oliveira',
+      telefone: '21 99876-5432',
+      tipoConsulta: 'Exame de Sangue',
+      valorTotal: 80.00,
+    },
+    {
+      time: '09:00',
+      paciente: 'Carlos Pereira',
+      telefone: '31 97654-3210',
+      tipoConsulta: 'Consulta de Rotina',
+      valorTotal: 50.00,
+    },
+    {
+      time: '11:00',
+      paciente: 'Ana Souza',
+      telefone: '41 96547-9875',
+      tipoConsulta: 'Check-up',
+      valorTotal: 120.00,
+    },
+    {
+      time: '12:00',
+      paciente: 'Pedro Santos',
+      telefone: '51 93456-7890',
+      tipoConsulta: 'Consulta de Rotina',
+      valorTotal: 90.00,
+    },
+    // ...adicione mais conforme necessário
   ];
 
   notions = [
@@ -52,7 +82,6 @@ export class HomeComponent {
   showInfo(index: number) {
     this.isOpen = this.isOpen === index ? null : index;
     this.isRotated = !this.isRotated;
-
   }
 
   constructor(private cdr: ChangeDetectorRef) {}

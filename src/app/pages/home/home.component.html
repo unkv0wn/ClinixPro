@@ -1,8 +1,10 @@
-<body class="flex h-screen">
+<body class="flex flex-col mt-10 md:mt-0 md:flex-row h-screen overflow-hidden">
   <!-- Lado esquerdo - Agendamentos -->
-  <section class="w-1/2 flex justify-center items-start">
+  <section
+    class="w-auto md:w-1/2 flex justify-center md:justify-start items-start"
+  >
     <article
-      class="bg-white w-full h-2/3 mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+      class="bg-white w-full h-auto mr-3 md:mr-11 ml-3 md:ml-11 mt-5 md:mt-10 p-4 md:p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
     >
       <header class="flex flex-row mb-4">
         <lucide-angular
@@ -14,8 +16,11 @@
       </header>
 
       <!-- Lista de agendamentos do dia -->
-      <ul>
-        <li *ngFor="let appointment of appointments; let i = index">
+      <ul class="flex flex-col items-center md:items-start">
+        <li
+          *ngFor="let appointment of appointments; let i = index"
+          class="w-full"
+        >
           <div
             class="flex items-center justify-between p-2 border-2 rounded-lg border-black/10 shadow-[0_0_4px_rgba(0,0,0,0.25)] mt-2"
           >
@@ -30,8 +35,8 @@
               </time>
             </div>
             <button
-              class="text-black/70 rounded-full p-1 transition-normal duration-1000 overflow-hidden ease-in-out"
-              [class.rotate-270]="isOpen === i"
+              class="text-black/70 rounded-full p-1 transition-normal duration-300 ease-in-out"
+              [class.-rotate-90]="isOpen === i"
               aria-label="Expandir"
               (click)="showInfo(i)"
             >
@@ -39,7 +44,6 @@
                 [img]="ChevronLeft"
                 class="text-black/50"
                 [size]="32"
-                [class.rotate-180]="isRotated"
               ></lucide-angular>
             </button>
           </div>
@@ -47,11 +51,24 @@
           <!-- Container que aparece ao clicar -->
           <div
             *ngIf="isOpen === i"
-            class="p-4 bg-gray-100 rounded-lg mt-2 shadow"
+            class="p-4 bg-gray-100 flex flex-col rounded-lg mt-2 shadow transition-all"
           >
-            <p class="text-sm text-gray-600">
-              Detalhes do agendamento de {{ appointment.time }}
-            </p>
+            <div class="flex flex-col md:flex-row md:justify-between p-2">
+              <span class="text-base text-black/60 font-semibold">
+                Paciente : {{ appointment.paciente }}
+              </span>
+              <span class="text-base text-black/60 font-semibold">
+                Telefone : {{ appointment.telefone }}
+              </span>
+            </div>
+            <div class="flex flex-col md:flex-row md:justify-between p-2">
+              <span class="text-base text-black/60 font-semibold">
+                Tipo Consulta : {{ appointment.tipoConsulta }}
+              </span>
+              <span class="md:mr-10 text-base text-black/60 font-semibold">
+                Valor Total : {{ appointment.valorTotal.toFixed(2) }}
+              </span>
+            </div>
           </div>
         </li>
       </ul>
@@ -59,10 +76,13 @@
   </section>
 
   <!-- Lado direito - Conteúdo adicional -->
-  <aside class="w-1/2 flex flex-col items-start mt-10 mr-11">
-    <!-- Anotações -->
-    <div class="w-full h-2/4 rounded-lg p-8 shadow-[0_0_8px_rgba(0,0,0,0.25)]">
-      <!-- Titulo -->
+  <aside
+    class="w-full md:w-1/2 flex items-start mt-5 md:mt-10 ml-3 md:ml-0 md:mr-10"
+  >
+    <div
+      class="w-full h-auto rounded-lg p-4 md:p-8 shadow-[0_0_8px_rgba(0,0,0,0.25)] mr-6 md:mr-0"
+    >
+      <!-- titlo -->
       <div class="flex items-start justify-between m-0">
         <div class="flex items-center">
           <lucide-angular
@@ -83,8 +103,8 @@
       </div>
 
       <!-- Conteudo -->
-      <ul>
-        <li *ngFor="let notion of notions">
+      <ul class="flex flex-col items-center">
+        <li *ngFor="let notion of notions" class="w-full">
           <div
             class="flex items-center justify-between p-2 border-2 rounded-lg border-black/10 shadow-[0_0_4px_rgba(0,0,0,0.25)] mt-2"
           >

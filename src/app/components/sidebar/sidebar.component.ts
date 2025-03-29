@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
 import {
   LucideAngularModule,
@@ -7,6 +7,7 @@ import {
   NotebookText,
   Banknote,
   LogOut,
+  MenuIcon,
 } from 'lucide-angular';
 import { MenuButtonComponent } from '../modals/menu-button/menu-button.component';
 import { CommonModule } from '@angular/common';
@@ -27,16 +28,32 @@ export class SidebarComponent {
   readonly NotbookText = NotebookText;
   readonly WalletCardsIcon = Banknote;
   readonly LogOut = LogOut;
+  readonly MenuIcon = MenuIcon;
   isSelected = false;
+  isCollapsed = true;
 
-  isCollapsed = false;
+  isMobile = window.innerWidth < 640; // Define se está em mobile
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isMobile = window.innerWidth < 640; // Atualiza ao redimensionar
+  }
 
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  alertaa() {
-    this.isSelected = !this.isSelected;
-    alert('Clicou no botão!');
+  ngOnInit() {
+    this.checkIfMobile();
+    window.addEventListener('resize', () => this.checkIfMobile());
+  }
+  
+  checkIfMobile() {
+    this.isMobile = window.innerWidth < 768; // Ajuste o valor conforme necessário
+    if (this.isMobile) {
+      this.isCollapsed = false; // Oculta a sidebar no mobile
+    } else {
+      this.isCollapsed = false; // Mostra a sidebar no desktop
+    }
   }
 }
