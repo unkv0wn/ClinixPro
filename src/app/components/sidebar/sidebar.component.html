@@ -1,6 +1,6 @@
 <main class="relative">
   <div
-    class="absolute w-screen h-10 flex justify-start items-center bg-white"
+    class="fixed w-screen h-10 flex justify-start items-center bg-white shadow-lg"
     *ngIf="isMobile"
   >
     <button class="pl-2 transition-all duration-500" (click)="toggleSidebar()">
@@ -13,7 +13,7 @@
   </div>
 
   <aside
-    class="flex flex-col shadow-[0_0_8px_rgba(0,0,0,0.25)] h-screen transition-all duration-500 mb-8"
+    class="flex flex-col shadow-[0_0_8px_rgba(0,0,0,0.25)] h-full md:h-screen transition-all duration-500 mb-8"
     [class.w-[296px]]="!isCollapsed"
     [class.w-[80px]]="isCollapsed"
     [class.fixed]="isMobile"
@@ -42,7 +42,7 @@
     <!-- Itens da SideBar -->
     <nav
       class="mx-3 font-primary flex flex-col justify-between flex-grow"
-      [ngClass]="isCollapsed ? 'md:mt-10' : 'mt-5'"
+      [ngClass]="isCollapsed ? '-mt-5 md:mt-10' : 'mt-5'"
     >
       <p
         class="text-[14px] text-black/30 font-bold"
@@ -76,7 +76,7 @@
       ></MenuButton>
 
       <footer
-        class="flex items-baseline justify-baseline mt-auto mb-14 md:mb-7"
+        class="flex items-baseline justify-baseline mt-auto mb-16 md:mb-7"
       >
         <MenuButton
           class="w-full"

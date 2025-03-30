@@ -16,7 +16,7 @@ export class MenuButtonComponent {
   @Input() buttonText: any = '';
   @Input() icon: any = LayoutDashboard;
   @Input() routerLink: string | any[] = [];
-  @Input() isCollapsed: boolean | undefined; // Adicione esta linha
+  @Input() isCollapsed: boolean | undefined; 
 
 
   constructor() {}

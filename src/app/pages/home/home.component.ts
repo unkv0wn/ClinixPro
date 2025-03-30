@@ -19,6 +19,7 @@ import {
   imports: [LucideAngularModule, CommonModule],
 })
 export class HomeComponent {
+  /*Definindo icones a ser usado na pagina */
   readonly Clock = Clock;
   readonly Plus = Plus;
   readonly NotebookPen = NotebookPen;
@@ -27,8 +28,11 @@ export class HomeComponent {
   readonly Pin = Pin;
   readonly Trash = Trash2;
 
-  date: Date[] | undefined;
+  /*Definição das variaveis */
+  isOpen: number | null = null;
+  isRotated: boolean = false;
 
+  /*Inicia instacia de mockup de dados como desmontração de uso serviço para os agendamentos */
   appointments = [
     {
       time: '08:00',
@@ -65,9 +69,10 @@ export class HomeComponent {
       tipoConsulta: 'Consulta de Rotina',
       valorTotal: 90.00,
     },
-    // ...adicione mais conforme necessário
   ];
 
+  
+  /*Inicia instacia de mockup de dados como desmontração de uso serviço para os anotações */  
   notions = [
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
@@ -76,13 +81,15 @@ export class HomeComponent {
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
   ];
 
-  isOpen: number | null = null;
-  isRotated: boolean = false;
-
+  /**
+   * Está função indica uma função de mostrar o detalhe dos agendamentos de acordo com o index clicado
+   * sendo mostrado de acordo com o indece declarado no json acima e instanciando a rotação de animação
+   * do icone
+   */
   showInfo(index: number) {
     this.isOpen = this.isOpen === index ? null : index;
     this.isRotated = !this.isRotated;
   }
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor() {}
 }

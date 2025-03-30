@@ -23,37 +23,44 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent {
+  /*Definindo os icones a ser usado na tela. */
   readonly ArrowBigLeft = ChevronLeft;
   readonly LayoutDashboard = LayoutDashboard;
   readonly NotbookText = NotebookText;
   readonly WalletCardsIcon = Banknote;
   readonly LogOut = LogOut;
   readonly MenuIcon = MenuIcon;
+
+  /*Variaveis de estado */
   isSelected = false;
   isCollapsed = true;
 
-  isMobile = window.innerWidth < 640; // Define se está em mobile
+  /*Definindo se esta em um mobile */
+  isMobile = window.innerWidth < 640;
 
+  /*Irá atualizar o valor conforme o tamanho da tela */
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.isMobile = window.innerWidth < 640; // Atualiza ao redimensionar
+    this.isMobile = window.innerWidth < 640;
   }
 
+  /*Irá alternar o estado da side bar entre expandida e recolhida */
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;
   }
 
+  /**
+   * Iniciando o ciclo do angular
+   * O Propio Angular irá veficar se o usuario esta em uma tela pequena,
+   * caso sim irá ocultar a exibição inicial da sidebar.
+  **/
   ngOnInit() {
     this.checkIfMobile();
-    window.addEventListener('resize', () => this.checkIfMobile());
+    window.addEventListener('resize', () => (this.isCollapsed = false));
   }
-  
+
   checkIfMobile() {
-    this.isMobile = window.innerWidth < 768; // Ajuste o valor conforme necessário
-    if (this.isMobile) {
-      this.isCollapsed = false; // Oculta a sidebar no mobile
-    } else {
-      this.isCollapsed = false; // Mostra a sidebar no desktop
-    }
+    this.isMobile = window.innerWidth < 768; 
+    this.isCollapsed = false; 
   }
 }
