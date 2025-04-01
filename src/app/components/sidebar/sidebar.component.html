@@ -1,6 +1,6 @@
 <main class="relative">
   <div
-    class="fixed w-screen h-10 flex justify-start items-center bg-white shadow-lg"
+    class="absolute w-screen h-10 flex justify-start items-center bg-white shadow-lg"
     *ngIf="isMobile"
   >
     <button class="pl-2 transition-all duration-500" (click)="toggleSidebar()">
@@ -74,6 +74,13 @@
         [isCollapsed]="isCollapsed"
         (click)="isMobile && toggleSidebar()"
       ></MenuButton>
+
+      <p
+        class="text-[14px] text-black/30 font-bold mt-5"
+        [class.hidden]="isCollapsed"
+      >
+        Cadastros
+      </p>
 
       <footer
         class="flex items-baseline justify-baseline mt-auto mb-16 md:mb-7"
