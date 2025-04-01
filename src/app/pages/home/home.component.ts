@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
 import {
   LucideAngularModule,
   Clock,
@@ -11,12 +10,15 @@ import {
   Pin,
   Trash2,
 } from 'lucide-angular';
+import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
+import { NotionRowComponent } from '../../components/notion-row/notion-row.component';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone: true,
-  imports: [LucideAngularModule, CommonModule],
+  imports: [LucideAngularModule, IconHeaderComponent, NotionRowComponent , CommonModule],
 })
 export class HomeComponent {
   /*Definindo icones a ser usado na pagina */

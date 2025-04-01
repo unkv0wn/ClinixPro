@@ -5,17 +5,7 @@
       class="bg-white w-1/2 h-10/12 flex flex-col mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
     >
       <!-- Titulo -->
-      <header class="flex flex-row mb-4">
-        <lucide-angular
-          [img]="Users"
-          class="text-blue-primary"
-          [size]="24"
-        ></lucide-angular>
-        <h2 class="font-medium text-base ml-1 text-black/50">
-          Detalhe Agendamentos
-        </h2>
-      </header>
-
+      <IconHeader [Icon]="Users" Title="Detalhe Agendamentos"></IconHeader>
       <!-- Conteudo -->
       <div class="flex flex-row h-full">
         <!-- Container lado esquerdo -->
@@ -77,8 +67,8 @@
               <span class="font-semibold text-base text-black/90">
                 Observação
               </span>
-              <span class="font-medium text-sm text-black/60">
-                Paciente reclamando........
+              <span class="font-medium text-sm text-black/60 break-words">
+                "Paciente relatou dores intensas na região lombar, iniciadas há aproximadamente cinco dias após levantar um objeto pesado. Ele descreve a dor como latejante e contínua, com piora ao se movimentar ou permanecer sentado por longos períodos. Informou que tentou alívio com analgésicos comuns, mas sem melhora significativa. Além disso, menciona sensação de formigamento na perna esquerda e dificuldade ao caminhar. Não apresenta histórico prévio de problemas na coluna, mas relata que já teve desconfortos semelhantes em ocasiões anteriores, embora de menor intensidade e curta duração. Paciente nega febre, perda de peso ou outros sintomas associados.
               </span>
             </div>
           </div>
@@ -93,16 +83,7 @@
       class="bg-white h-10/12 flex flex-col mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
     >
       <!-- Titulo -->
-      <header class="flex flex-row mb-4">
-        <lucide-angular
-          [img]="Users"
-          class="text-blue-primary"
-          [size]="24"
-        ></lucide-angular>
-        <h2 class="font-medium text-base ml-1 text-black/50">
-          Lista Agendamentos
-        </h2>
-      </header>
+      <IconHeader [Icon]="TableOfContents" Title="Lista Agendamentos"></IconHeader>
       <!-- Tabela de dados -->
       <div
         class="max-h-80 overflow-y-auto scroll-smooth rounded-lg shadow-[0_0_4px_rgba(0,0,0,0.25)] scroll-container"
