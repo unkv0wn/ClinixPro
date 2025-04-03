@@ -1,1 +1,93 @@
-<p class="flex items-center justify-center">financal works!</p>
+<body class="flex flex-col h-screen">
+  <!-- Parte de Cima - Card de detalhes -->
+  <section class="flex-1 flex justify-start">
+    <article
+      class="bg-white w-full min-w-0 h-10/12 flex flex-col mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+    >
+      <div class="h-full flex items-center justify-center">
+        <highcharts-chart
+          [Highcharts]="Highcharts"
+          [options]="chartOptions"
+          class="w-full h-full p-2"
+        >
+        </highcharts-chart>
+      </div>
+    </article>
+  </section>
+
+  <!-- Parte Baixo - Tabela -->
+  <section class="flex-1">
+    <article
+      class="bg-white h-10/12 flex flex-col mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+    >
+      <!-- Titulo -->
+      <IconHeader
+        [Icon]="TableOfContents"
+        Title="Painel Finaceiro"
+      ></IconHeader>
+      <!-- Tabela de dados -->
+      <div
+        class="max-h-80 overflow-y-auto scroll-smooth rounded-lg shadow-[0_0_4px_rgba(0,0,0,0.25)] scroll-container"
+      >
+        <table class="p-2 w-full h-full">
+          <thead class="rounded-t-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
+            <tr>
+              <th class="p-2 text-left text-black/40 ">Documento</th>
+              <th class="p-2 text-left text-black/40  w-1/12">ID</th>
+              <th class="p-2 text-left text-black/40  w-1/4">Paciente</th>
+              <th class="p-2 text-left text-black/40  w-1/12">Emissao</th>
+              <th class="p-2 text-left text-black/40  w-1/12">Valor</th>
+              <th class="p-2 text-left text-black/40  w-1/12">Forma pagto</th>
+              <th class="p-2 text-left text-black/40  w-1/12">Status</th>
+              <th class="p-2 text-left text-black/40  w-1/4">Ações</th>
+            </tr>
+          </thead>
+          <tbody class="rounded-b-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
+            <tr
+              *ngFor="let notion of notions"
+              class="shadow-[0_0_2px_rgba(0,0,0,0.25)]"
+            >
+              <td class="p-2 text-black/60 font-medium text-base">1</td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                222233
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base">Matheus Fraga da Silva</td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                10/19/1990
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                500.00
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                CD
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                Pendente
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base text-left">
+                <button
+                  class="text-black/70 hover:text-blue-primary rounded-full p-1"
+                  aria-label="Ações"
+                >
+                  <lucide-angular [img]="Seach" [size]="20"></lucide-angular>
+                </button>
+                <button
+                  class="text-black/70 hover:text-blue-primary rounded-full p-1 ml-2"
+                  aria-label="Ações"
+                >
+                  <lucide-angular [img]="Printer" [size]="20"></lucide-angular>
+                </button>
+                <button
+                  class="text-black/70 hover:text-blue-primary rounded-full p-1 ml-2"
+                  aria-label="Ações"
+                >
+                  <lucide-angular [img]="Trash" [size]="20"></lucide-angular>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+</body>
