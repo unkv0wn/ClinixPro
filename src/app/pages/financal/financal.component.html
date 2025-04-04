@@ -37,7 +37,7 @@
               <th class="p-2 text-left text-black/40  w-1/4">Paciente</th>
               <th class="p-2 text-left text-black/40  w-1/12">Emissao</th>
               <th class="p-2 text-left text-black/40  w-1/12">Valor</th>
-              <th class="p-2 text-left text-black/40  w-1/12">Forma pagto</th>
+              <th class="p-2 text-left text-black/40  w-1/10">Forma pagto</th>
               <th class="p-2 text-left text-black/40  w-1/12">Status</th>
               <th class="p-2 text-left text-black/40  w-1/4">Ações</th>
             </tr>
@@ -59,18 +59,18 @@
                 500.00
               </td>
               <td class="p-2 text-black/60 font-medium text-base">
-                CD
+                Cartão de Débito
               </td>
               <td class="p-2 text-black/60 font-medium text-base">
-                Pendente
+                <!-- bg-green-500/70 - Sucesso
+                bg-orange-500/70 - Aguardando
+                bg-red-500/70 - Atrasado -->
+                <div class="bg-green-500/70 text-black/70 font-semibold flex justify-center items-center py-1 px-3 rounded-md shadow">
+                  Aguardando
+                </div>
               </td>
               <td class="p-2 text-black/60 font-medium text-base text-left">
-                <button
-                  class="text-black/70 hover:text-blue-primary rounded-full p-1"
-                  aria-label="Ações"
-                >
-                  <lucide-angular [img]="Seach" [size]="20"></lucide-angular>
-                </button>
+
                 <button
                   class="text-black/70 hover:text-blue-primary rounded-full p-1 ml-2"
                   aria-label="Ações"
