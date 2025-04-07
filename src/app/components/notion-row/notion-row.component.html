@@ -9,7 +9,9 @@
   <button
     class="text-black/70 hover:text-blue-primary rounded-full p-1"
     aria-label="Voltar"
+    (click)="showModal()"
   >
     <lucide-angular [img]="Trash" [size]="24"></lucide-angular>
   </button>
 </div>
+<app-delete-notion *ngIf="isModal === true" (closed)="showModal()" [index]="index"></app-delete-notion>

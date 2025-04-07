@@ -40,7 +40,7 @@
               ></lucide-angular>
             </button>
           </div>
-<!-- Container que aparece ao clicar -->
+          <!-- Container que aparece ao clicar -->
           <div
             *ngIf="isOpen === i"
             class="p-4 bg-gray-100 flex flex-col rounded-lg mt-2 shadow transition-all"
@@ -62,7 +62,6 @@
               </span>
             </div>
           </div>
-
         </li>
       </ul>
     </article>
@@ -88,9 +87,9 @@
 
       <!-- Conteudo -->
       <ul class="flex flex-col items-center">
-        <li *ngFor="let notion of notions" class="w-full">
+        <li *ngFor="let notion of notions; let i = index" class="w-full">
           <!-- Messagens de Anotações -->
-          <NotionRow [notion]="notion"></NotionRow>
+          <NotionRow [notion]="notion" [index]="i"></NotionRow>
         </li>
       </ul>
     </div>

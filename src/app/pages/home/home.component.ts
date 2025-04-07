@@ -13,12 +13,16 @@ import {
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { NotionRowComponent } from '../../components/notion-row/notion-row.component';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone: true,
-  imports: [LucideAngularModule, IconHeaderComponent, NotionRowComponent , CommonModule],
+  imports: [
+    LucideAngularModule,
+    IconHeaderComponent,
+    NotionRowComponent,
+    CommonModule
+  ],
 })
 export class HomeComponent {
   /*Definindo icones a ser usado na pagina */
@@ -33,6 +37,7 @@ export class HomeComponent {
   /*Definição das variaveis */
   isOpen: number | null = null;
   isRotated: boolean = false;
+  isModal: boolean = false;
 
   /*Inicia instacia de mockup de dados como desmontração de uso serviço para os agendamentos */
   appointments = [
@@ -41,40 +46,39 @@ export class HomeComponent {
       paciente: 'João Silva',
       telefone: '11 98765-4321',
       tipoConsulta: 'Retorno',
-      valorTotal: 100.00,
+      valorTotal: 100.0,
     },
     {
       time: '08:30',
       paciente: 'Maria Oliveira',
       telefone: '21 99876-5432',
       tipoConsulta: 'Exame de Sangue',
-      valorTotal: 80.00,
+      valorTotal: 80.0,
     },
     {
       time: '09:00',
       paciente: 'Carlos Pereira',
       telefone: '31 97654-3210',
       tipoConsulta: 'Consulta de Rotina',
-      valorTotal: 50.00,
+      valorTotal: 50.0,
     },
     {
       time: '11:00',
       paciente: 'Ana Souza',
       telefone: '41 96547-9875',
       tipoConsulta: 'Check-up',
-      valorTotal: 120.00,
+      valorTotal: 120.0,
     },
     {
       time: '12:00',
       paciente: 'Pedro Santos',
       telefone: '51 93456-7890',
       tipoConsulta: 'Consulta de Rotina',
-      valorTotal: 90.00,
+      valorTotal: 90.0,
     },
   ];
 
-  
-  /*Inicia instacia de mockup de dados como desmontração de uso serviço para os anotações */  
+  /*Inicia instacia de mockup de dados como desmontração de uso serviço para os anotações */
   notions = [
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
@@ -92,6 +96,9 @@ export class HomeComponent {
     this.isOpen = this.isOpen === index ? null : index;
     this.isRotated = !this.isRotated;
   }
+
+
+  
 
   constructor() {}
 }

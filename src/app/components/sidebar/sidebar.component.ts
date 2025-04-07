@@ -8,9 +8,14 @@ import {
   Banknote,
   LogOut,
   MenuIcon,
+  Users,
+  IdCard,
+  Stethoscope,
+  HandCoins,
 } from 'lucide-angular';
-import { MenuButtonComponent } from '../modals/menu-button/menu-button.component';
+import { MenuButtonComponent } from '../menu-button/menu-button.component';
 import { CommonModule } from '@angular/common';
+import { MenuSection } from '../../models/menu/menu.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -30,6 +35,10 @@ export class SidebarComponent {
   readonly WalletCardsIcon = Banknote;
   readonly LogOut = LogOut;
   readonly MenuIcon = MenuIcon;
+  readonly Users = Users;
+  readonly IdCard = IdCard;
+  readonly Stethoscope = Stethoscope;
+  readonly HandCoins = HandCoins;
 
   /*Variaveis de estado */
   isSelected = false;
@@ -63,4 +72,28 @@ export class SidebarComponent {
     this.isMobile = window.innerWidth < 768; 
     this.isCollapsed = false; 
   }
+
+  /**
+   * Seçoes de side bar
+   */
+
+  sections: MenuSection[] = [
+    {
+      title: 'Painel Principal',
+      items: [
+        { text: 'Pagina principal', icon: LayoutDashboard, route: '/index' },
+        { text: 'Agendamentos', icon: NotebookText, route: '/agendamentos' },
+        { text: 'Financeiro', icon: Banknote, route: '/financeiro' },
+      ],
+    },
+    {
+      title: 'Cadastros',
+      items: [
+        { text: 'Pacientes', icon: Users, route: '/index' },
+        { text: 'Medicos', icon: IdCard, route: '/agendamentos' },
+        { text: 'Serviços', icon: Stethoscope, route: '/financeiro' },
+        { text: 'Pagamentos / Convenios', icon: HandCoins, route: '/index' },
+      ],
+    },
+  ]
 }

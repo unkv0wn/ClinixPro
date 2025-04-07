@@ -44,7 +44,7 @@
       class="mx-3 font-primary flex flex-col justify-between flex-grow"
       [ngClass]="isCollapsed ? '-mt-5 md:mt-10' : 'mt-5'"
     >
-      <p
+      <!-- <p
         class="text-[14px] text-black/30 font-bold"
         [class.hidden]="isCollapsed"
       >
@@ -81,6 +81,56 @@
       >
         Cadastros
       </p>
+
+      <MenuButton
+        [buttonText]="isCollapsed ? '' : 'Pacientes'"
+        [icon]="Users"
+        [routerLink]="['/index']"
+        [isCollapsed]="isCollapsed"
+        (click)="isMobile && toggleSidebar()"
+      ></MenuButton>
+
+      <MenuButton
+        [buttonText]="isCollapsed ? '' : 'Medicos'"
+        [icon]="IdCard"
+        [routerLink]="['/index']"
+        [isCollapsed]="isCollapsed"
+        (click)="isMobile && toggleSidebar()"
+      ></MenuButton>
+
+      <MenuButton
+        [buttonText]="isCollapsed ? '' : 'Serviços'"
+        [icon]="Stethoscope"
+        [routerLink]="['/index']"
+        [isCollapsed]="isCollapsed"
+        (click)="isMobile && toggleSidebar()"
+      ></MenuButton>
+
+      <MenuButton
+      [buttonText]="isCollapsed ? '' : 'Pagamentos / Convenios'"
+      [icon]="HandCoins"
+      [routerLink]="['/index']"
+      [isCollapsed]="isCollapsed"
+      (click)="isMobile && toggleSidebar()"
+    ></MenuButton> -->
+
+    <ng-container *ngFor="let section of sections">
+      <p
+        class="text-[14px] text-black/30 font-bold mt-5"
+        [class.hidden]="isCollapsed"
+      >
+        {{ section.title }}
+      </p>
+    
+      <MenuButton
+        *ngFor="let item of section.items"
+        [buttonText]="isCollapsed ? '' : item.text"
+        [icon]="item.icon"
+        [routerLink]="[item.route]"
+        [isCollapsed]="isCollapsed"
+        (click)="isMobile && toggleSidebar()"
+      ></MenuButton>
+    </ng-container>
 
       <footer
         class="flex items-baseline justify-baseline mt-auto mb-16 md:mb-7"
