@@ -3,7 +3,7 @@
     class="w-[389px] py-8 px-8 rounded-[8px] shadow-[0_0_8px_rgba(0,0,0,0.25)]"
   >
     <logo-component></logo-component>
-    <form class="mt-4" (ngSubmit)="onSubmit()">
+    <form class="mt-4">
       <!-- Campo Usuario -->
       <div class="mb-2">
         <label class="block text-black/60 text-md font-medium mb-2" for="user">
@@ -51,8 +51,7 @@
       <div class="flex items-center">
         <button
           class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-2 w-full rounded-[8px] focus:outline-none focus:shadow-outline"
-          type="submit"
-          routerlink="/homepage"
+          (click)="login()"
         >
           Entrar
         </button>

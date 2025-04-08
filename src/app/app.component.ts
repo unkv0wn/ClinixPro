@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IndexComponent } from './pages/index/index.component';
+import { RouterOutlet } from '@angular/router';
+import { Router } from 'lucide-angular';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [IndexComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

@@ -44,75 +44,6 @@
       class="mx-3 font-primary flex flex-col justify-between flex-grow"
       [ngClass]="isCollapsed ? '-mt-5 md:mt-10' : 'mt-5'"
     >
-      <!-- <p
-        class="text-[14px] text-black/30 font-bold"
-        [class.hidden]="isCollapsed"
-      >
-        Painel Principal
-      </p>
-
-      <MenuButton
-        [buttonText]="isCollapsed ? '' : 'Pagina principal'"
-        [icon]="LayoutDashboard"
-        [routerLink]="['/index']"
-        [isCollapsed]="isCollapsed"
-        (click)="isMobile && toggleSidebar()"
-      ></MenuButton>
-
-      <MenuButton
-        [buttonText]="isCollapsed ? '' : 'Agendamentos'"
-        [icon]="NotbookText"
-        routerLink="/agendamentos"
-        [isCollapsed]="isCollapsed"
-        (click)="isMobile && toggleSidebar()"
-      ></MenuButton>
-
-      <MenuButton
-        [buttonText]="isCollapsed ? '' : 'Financeiro'"
-        [icon]="WalletCardsIcon"
-        routerLink="/financeiro"
-        [isCollapsed]="isCollapsed"
-        (click)="isMobile && toggleSidebar()"
-      ></MenuButton>
-
-      <p
-        class="text-[14px] text-black/30 font-bold mt-5"
-        [class.hidden]="isCollapsed"
-      >
-        Cadastros
-      </p>
-
-      <MenuButton
-        [buttonText]="isCollapsed ? '' : 'Pacientes'"
-        [icon]="Users"
-        [routerLink]="['/index']"
-        [isCollapsed]="isCollapsed"
-        (click)="isMobile && toggleSidebar()"
-      ></MenuButton>
-
-      <MenuButton
-        [buttonText]="isCollapsed ? '' : 'Medicos'"
-        [icon]="IdCard"
-        [routerLink]="['/index']"
-        [isCollapsed]="isCollapsed"
-        (click)="isMobile && toggleSidebar()"
-      ></MenuButton>
-
-      <MenuButton
-        [buttonText]="isCollapsed ? '' : 'Serviços'"
-        [icon]="Stethoscope"
-        [routerLink]="['/index']"
-        [isCollapsed]="isCollapsed"
-        (click)="isMobile && toggleSidebar()"
-      ></MenuButton>
-
-      <MenuButton
-      [buttonText]="isCollapsed ? '' : 'Pagamentos / Convenios'"
-      [icon]="HandCoins"
-      [routerLink]="['/index']"
-      [isCollapsed]="isCollapsed"
-      (click)="isMobile && toggleSidebar()"
-    ></MenuButton> -->
 
     <ng-container *ngFor="let section of sections">
       <p
@@ -139,9 +70,10 @@
           class="w-full"
           [buttonText]="isCollapsed ? '' : 'Sair'"
           [icon]="LogOut"
-          routerLink="/index"
+          routerLink="/"
           [isCollapsed]="isCollapsed"
           (click)="isMobile && toggleSidebar()"
+
         ></MenuButton>
       </footer>
     </nav>
