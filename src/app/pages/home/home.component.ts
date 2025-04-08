@@ -12,6 +12,7 @@ import {
 } from 'lucide-angular';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { NotionRowComponent } from '../../components/notion-row/notion-row.component';
+import { CreateNotionComponent } from "../../components/modals/create-notion/create-notion.component";
 
 @Component({
   selector: 'app-home',
@@ -21,8 +22,9 @@ import { NotionRowComponent } from '../../components/notion-row/notion-row.compo
     LucideAngularModule,
     IconHeaderComponent,
     NotionRowComponent,
-    CommonModule
-  ],
+    CommonModule,
+    CreateNotionComponent
+],
 })
 export class HomeComponent {
   /*Definindo icones a ser usado na pagina */
@@ -80,7 +82,7 @@ export class HomeComponent {
 
   /*Inicia instacia de mockup de dados como desmontração de uso serviço para os anotações */
   notions = [
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
+    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum  Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
@@ -97,8 +99,10 @@ export class HomeComponent {
     this.isRotated = !this.isRotated;
   }
 
+  showModal() {
+    this.isModal = !this.isModal;
+  }
 
-  
 
   constructor() {}
 }

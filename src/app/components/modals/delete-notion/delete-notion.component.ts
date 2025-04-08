@@ -31,7 +31,6 @@ export class DeleteNotionComponent  implements OnInit {
   deleteNotion() {
     console.log('Deletando anotação...', this.index);
     this.closed.emit();
-    // Aqui você pode adicionar a lógica para deletar a noção)
   }
 
 }

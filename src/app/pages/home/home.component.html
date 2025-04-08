@@ -80,10 +80,12 @@
         <button
           class="text-black/70 mr-2.5 p-1 hover:text-blue-primary"
           aria-label="Voltar"
+          (click)="showModal()"
         >
           <lucide-angular [img]="Plus" [size]="24"></lucide-angular>
         </button>
       </div>
+      <app-create-notion *ngIf="isModal === true" (closed)="showModal()"></app-create-notion>
 
       <!-- Conteudo -->
       <ul class="flex flex-col items-center">
