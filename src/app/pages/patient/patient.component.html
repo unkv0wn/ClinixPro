@@ -17,15 +17,11 @@
 
   <!-- Parte Baixo - Tabela -->
   <section class="h-full min-w-0">
-    <article
-      class="bg-white h-full flex flex-col mr-11 ml-11 mt-5 mb-9 "
-    >
+    <article class="bg-white h-full flex flex-col mr-11 ml-11 mt-5 mb-9">
       <!-- Container com scroll -->
       <div class="h-[calc(100vh-85px)] flex flex-col">
         <!-- Área com scroll -->
-        <div
-          class="flex-1 rounded-lg overflow-y-auto  scroll-container"
-        >
+        <div class="flex-1 rounded-lg overflow-y-auto scroll-container">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <app-card-patient
               *ngFor="let paciente of pacientes"
@@ -35,6 +31,7 @@
               [phone]="paciente.telefone"
               [status]="paciente.status"
               [updateat]="paciente.atualizadoEm"
+              [isMedical]="true"
               class="h-full"
             ></app-card-patient>
           </div>

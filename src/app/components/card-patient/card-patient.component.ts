@@ -40,6 +40,8 @@ export class CardPatientComponent {
   @Input() phone: string = '';
   @Input() status: string = '';
   @Input() updateat: string = '';
+  @Input() isMedical: boolean = false;
+  @Input() isPatient: boolean = false;
 
   toggleOptions() {
     this.showOptions = !this.showOptions;
