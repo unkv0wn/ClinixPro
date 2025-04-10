@@ -89,7 +89,7 @@ export class SidebarComponent {
     {
       title: 'Cadastros',
       items: [
-        { text: 'Pacientes', icon: Users, route: '/index' },
+        { text: 'Pacientes', icon: Users, route: '/pacientes' },
         { text: 'Medicos', icon: IdCard, route: '/agendamentos' },
         { text: 'Serviços', icon: Stethoscope, route: '/financeiro' },
         { text: 'Pagamentos / Convenios', icon: HandCoins, route: '/index' },

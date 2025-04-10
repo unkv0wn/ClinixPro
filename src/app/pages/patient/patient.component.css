@@ -1,0 +1,25 @@
+/* Personalizando a barra de rolagem */
+.scroll-container::-webkit-scrollbar {
+    width: 5px;
+    height: 5%; /* Largura da barra de rolagem */
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Cor do botão da barra */
+    border-radius: 12px; /* Arredonda o botão da barra */
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Cor do botão da barra ao passar o mouse */
+  }
+  
+  .scroll-container::-webkit-scrollbar-track {
+    background-color: transparent; /* Cor da trilha da barra */
+    border-radius: 10px; /* Arredonda as bordas da trilha */
+  }
+  

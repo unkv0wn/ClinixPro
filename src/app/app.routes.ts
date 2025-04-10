@@ -4,6 +4,7 @@ import { FinancalComponent } from './pages/financal/financal.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { IndexComponent } from './pages/index/index.component';
+import { PatientComponent } from './pages/patient/patient.component';
 
 export const routes: Routes = [
   // { path: '', component: LoginComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
       { path: 'index', component: HomeComponent },
       { path: 'agendamentos', component: SchedulingComponent },
       { path: 'financeiro', component: FinancalComponent },
+      { path: 'pacientes', component: PatientComponent },
     ]
   }
 ];
