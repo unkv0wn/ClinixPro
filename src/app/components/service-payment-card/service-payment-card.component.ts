@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Landmark, LucideAngularModule } from 'lucide-angular';
+import { Activity, Landmark, LucideAngularModule } from 'lucide-angular';
 import {
   Calendar,
   Camera,
@@ -31,19 +31,17 @@ export class ServicePaymentCardComponent {
   readonly Trash2 = Trash2;
   readonly MoreHorizontal = MoreHorizontal;
   readonly LandMark = Landmark;
+  readonly Activity = Activity
 
   showOptions = false;
 
   // Inputs dinâmicos
   @Input() id: number = 0;
   @Input() name: string = '';
-  @Input() cpf: string = '';
-  @Input() crm: string = '';
-  @Input() phone: string = '';
-  @Input() status: string = '';
+  @Input() value: number = 0;
+  @Input() status: boolean = true;
   @Input() updateat: string = '';
-  @Input() isMedical: boolean = false;
-  @Input() isPatient: boolean = false;
+
 
   toggleOptions() {
     this.showOptions = !this.showOptions;

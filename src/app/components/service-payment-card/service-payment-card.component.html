@@ -11,13 +11,13 @@
       <span class="text-gray-600 font-medium text-sm"
         >ID: {{ id }}</span
       >
-      <div class="flex items-center">
+      <div *ngIf="" class="flex items-center">
         <span
           class="inline-block h-2 w-2 rounded-full bg-green-500 mr-1"
         ></span>
         <span class="text-sm font-medium text-green-600">Ativo</span>
       </div>
-      <div class="flex items-center">
+      <div *ngIf="" class="flex items-center">
         <span
           class="inline-block h-2 w-2 rounded-full bg-red-500 mr-1"
         ></span>
@@ -74,7 +74,7 @@
   <div class="px-6 py-4 space-y-4">
     <div>
       <h3 class="text-lg font-semibold text-gray-800">
-        Massagem Muscular
+        {{ name }}
       </h3>
     </div>
 
@@ -93,7 +93,7 @@
         </div>
         <div class="ml-3">
           <p class="text-xs text-gray-500">Valor Total</p>
-          <p class="text-sm font-medium text-gray-800">R$ 40.00</p>
+          <p class="text-sm font-medium text-gray-800">R$ {{value}}</p>
         </div>
       </div>
     </div>
@@ -111,6 +111,6 @@
       ></lucide-angular>
       Histórico Completo
     </button>
-    <span class="text-xs text-gray-500">Atualizado: 10/04/1005</span>
+    <span class="text-xs text-gray-500">Atualizado: {{updateat}}</span>
   </div>
 </div>

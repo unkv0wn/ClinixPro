@@ -23,7 +23,15 @@
           <!-- Área com scroll -->
           <div class="flex-1 rounded-lg overflow-y-auto scroll-container">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <app-service-payment-card></app-service-payment-card>
+              <div *ngFor="let servico of medicalServices">
+                <app-service-payment-card
+                  [id]="servico.id"
+                  [name]="servico.name"
+                  [value]="servico.value"
+                  [status]="servico.status"
+                  [updateat]="servico.updateat">
+                </app-service-payment-card>
+              </div>
             </div>
           </div>
         </div>
