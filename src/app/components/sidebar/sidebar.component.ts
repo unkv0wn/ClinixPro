@@ -92,7 +92,11 @@ export class SidebarComponent {
         { text: 'Pacientes', icon: Users, route: '/pacientes' },
         { text: 'Medicos', icon: IdCard, route: '/medicos' },
         { text: 'Serviços', icon: Stethoscope, route: '/servicos' },
-        { text: 'Pagamentos / Convenios', icon: HandCoins, route: '/index' },
+        {
+          text: 'Pagamentos / Convenios',
+          icon: HandCoins,
+          route: '/pagamentos',
+        },
       ],
     },
   ];

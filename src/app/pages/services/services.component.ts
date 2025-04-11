@@ -22,6 +22,6 @@ export class ServicesComponent {
     { id: 7, name: 'Vacinação', value: 90, status: true, updateat: '2025-04-05' },
     { id: 8, name: 'Fisioterapia', value: 110, status: true, updateat: '2025-04-06' },
     { id: 9, name: 'Consulta Ginecológica', value: 170, status: true, updateat: '2025-04-07' },
-    { id: 10, name: 'Exame de Urina', value: 70, status: true, updateat: '2025-04-08' },
+    { id: 10, name: 'Exame de Urina', value: 70, status: false, updateat: '2025-04-08' },
   ];
 }

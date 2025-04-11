@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Activity, Landmark, LucideAngularModule } from 'lucide-angular';
+import { Activity, Banknote, Landmark, LucideAngularModule } from 'lucide-angular';
 import {
   Calendar,
   Camera,
@@ -32,15 +32,18 @@ export class ServicePaymentCardComponent {
   readonly MoreHorizontal = MoreHorizontal;
   readonly LandMark = Landmark;
   readonly Activity = Activity
+  readonly Banknote = Banknote
 
   showOptions = false;
 
   // Inputs dinâmicos
   @Input() id: number = 0;
   @Input() name: string = '';
+  @Input() abreviation: string = '';
   @Input() value: number = 0;
   @Input() status: boolean = true;
   @Input() updateat: string = '';
+  @Input() isPayment: boolean = false;
 
 
   toggleOptions() {

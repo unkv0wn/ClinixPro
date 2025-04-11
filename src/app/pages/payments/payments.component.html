@@ -1,1 +1,44 @@
-<p>payments works!</p>
+<body class="flex flex-col h-screen">
+    <!-- Parte de Cima - Card de detalhes -->
+    <section class="w-full h-24">
+      <div class="flex items-center justify-between h-full px-10">
+        <div class="mt-4">
+          <IconHeader [Icon]="Users" Title="Cadastro de Pacientes"></IconHeader>
+        </div>
+        <div>
+          <button
+            class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
+          >
+            Novo Paciente
+          </button>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Parte Baixo - Tabela -->
+    <section class="h-full min-w-0">
+      <article class="bg-white h-full flex flex-col mr-11 ml-11 mt-5 mb-9">
+        <!-- Container com scroll -->
+        <div class="h-[calc(100vh-85px)] flex flex-col">
+          <!-- Área com scroll -->
+          <div class="flex-1 rounded-lg overflow-y-auto scroll-container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div *ngFor="let payment of paymentMethods">
+                <app-service-payment-card
+                  [id]="payment.id"
+                  [name]="payment.name"
+                  [abreviation]="payment.abreviation"
+                  [status]="payment.status"
+                  [updateat]="payment.updateat"
+                  [isPayment]="true"
+                  >
+                  
+                </app-service-payment-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </body>
+  
