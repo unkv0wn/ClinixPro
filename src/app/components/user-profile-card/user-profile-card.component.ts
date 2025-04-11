@@ -15,9 +15,9 @@ import {
 } from 'lucide-angular';
 
 @Component({
-  selector: 'app-card-patient',
+  selector: 'user-profile-card',
   imports: [LucideAngularModule, CommonModule],
-  templateUrl: './card-patient.component.html',
+  templateUrl: './user-profile-card.component.html',
 })
 export class CardPatientComponent {
   readonly Users = Users;
@@ -37,6 +37,7 @@ export class CardPatientComponent {
   @Input() id: number = 0;
   @Input() name: string = '';
   @Input() cpf: string = '';
+  @Input() crm: string = '';
   @Input() phone: string = '';
   @Input() status: string = '';
   @Input() updateat: string = '';

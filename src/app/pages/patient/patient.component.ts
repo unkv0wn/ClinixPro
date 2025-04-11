@@ -6,7 +6,8 @@ import {
   Users,
 } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
-import { CardPatientComponent } from "../../components/card-patient/card-patient.component";
+import { CardPatientComponent } from "../../components/user-profile-card/user-profile-card.component";
+
 
 @Component({
   selector: 'app-patient',

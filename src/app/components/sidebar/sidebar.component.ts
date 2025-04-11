@@ -62,15 +62,15 @@ export class SidebarComponent {
    * Iniciando o ciclo do angular
    * O Propio Angular irá veficar se o usuario esta em uma tela pequena,
    * caso sim irá ocultar a exibição inicial da sidebar.
-  **/
+   **/
   ngOnInit() {
     this.checkIfMobile();
     window.addEventListener('resize', () => (this.isCollapsed = false));
   }
 
   checkIfMobile() {
-    this.isMobile = window.innerWidth < 768; 
-    this.isCollapsed = false; 
+    this.isMobile = window.innerWidth < 768;
+    this.isCollapsed = false;
   }
 
   /**
@@ -90,10 +90,10 @@ export class SidebarComponent {
       title: 'Cadastros',
       items: [
         { text: 'Pacientes', icon: Users, route: '/pacientes' },
-        { text: 'Medicos', icon: IdCard, route: '/agendamentos' },
+        { text: 'Medicos', icon: IdCard, route: '/medicos' },
         { text: 'Serviços', icon: Stethoscope, route: '/financeiro' },
         { text: 'Pagamentos / Convenios', icon: HandCoins, route: '/index' },
       ],
     },
-  ]
+  ];
 }
