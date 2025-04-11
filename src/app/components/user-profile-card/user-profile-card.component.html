@@ -47,9 +47,11 @@
               class="text-black/60"
               [size]="18"
             ></lucide-angular>
-            <span class="font-semibold ml-1">Editar Paciente</span>
+            <span *ngIf="isPatient" class="font-semibold ml-1">Editar Paciente</span>
+            <span *ngIf="isMedical" class="font-semibold ml-1">Editar Médico</span>
           </button>
           <button
+            *ngIf="isPatient"
             class="flex items-center px-4 py-2 text-sm text-black/60 hover:bg-gray-100 w-full text-left"
             (click)="ScheduleFunction()"
           >
@@ -69,7 +71,8 @@
               class="text-black/60"
               [size]="18"
             ></lucide-angular>
-            <span class="font-semibold ml-1">Remover Paciente</span>
+            <span *ngIf="isPatient" class="font-semibold ml-1">Remover Paciente</span>
+            <span *ngIf="isMedical" class="font-semibold ml-1">Remover Medico</span>
           </button>
         </div>
       </div>
