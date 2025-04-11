@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { Landmark, LucideAngularModule } from 'lucide-angular';
 import {
   Calendar,
   Camera,
@@ -30,6 +30,7 @@ export class ServicePaymentCardComponent {
   readonly Edit = Edit;
   readonly Trash2 = Trash2;
   readonly MoreHorizontal = MoreHorizontal;
+  readonly LandMark = Landmark;
 
   showOptions = false;
 
