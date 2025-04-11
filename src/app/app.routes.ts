@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { IndexComponent } from './pages/index/index.component';
 import { PatientComponent } from './pages/patient/patient.component';
 import { MedicalComponent } from './pages/medical/medical.component';
+import { ServicesComponent } from './pages/services/services.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -19,6 +20,7 @@ export const routes: Routes = [
       { path: 'financeiro', component: FinancalComponent },
       { path: 'pacientes', component: PatientComponent },
       { path: 'medicos', component: MedicalComponent },
+      { path: 'servicos', component: ServicesComponent },
     ]
   }
 ];
