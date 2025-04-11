@@ -21,8 +21,11 @@
     [class.bg-white]="isMobile"
     [class.-translate-x-full]="isMobile && !isCollapsed"
   >
-    <header class="mt-8 flex items-center justify-center relative">
-      <logo-component *ngIf="!isCollapsed"></logo-component>
+    <header
+      class="mt-8 flex items-center justify-center relative transition-opacity duration-300"
+      [style.opacity]="isCollapsed ? '0' : '1'"
+    >
+      <logo-component></logo-component>
     </header>
 
     <button
@@ -44,24 +47,23 @@
       class="mx-3 font-primary flex flex-col justify-between flex-grow"
       [ngClass]="isCollapsed ? '-mt-5 md:mt-10' : 'mt-5'"
     >
+      <ng-container *ngFor="let section of sections">
+        <p
+          class="text-[14px] text-black/30 font-bold mt-5"
+          [class.hidden]="isCollapsed"
+        >
+          {{ section.title }}
+        </p>
 
-    <ng-container *ngFor="let section of sections">
-      <p
-        class="text-[14px] text-black/30 font-bold mt-5"
-        [class.hidden]="isCollapsed"
-      >
-        {{ section.title }}
-      </p>
-    
-      <MenuButton
-        *ngFor="let item of section.items"
-        [buttonText]="isCollapsed ? '' : item.text"
-        [icon]="item.icon"
-        [routerLink]="[item.route]"
-        [isCollapsed]="isCollapsed"
-        (click)="isMobile && toggleSidebar()"
-      ></MenuButton>
-    </ng-container>
+        <MenuButton
+          *ngFor="let item of section.items"
+          [buttonText]="isCollapsed ? '' : item.text"
+          [icon]="item.icon"
+          [routerLink]="[item.route]"
+          [isCollapsed]="isCollapsed"
+          (click)="isMobile && toggleSidebar()"
+        ></MenuButton>
+      </ng-container>
 
       <footer
         class="flex items-baseline justify-baseline mt-auto mb-16 md:mb-7"
@@ -73,7 +75,6 @@
           routerLink="/"
           [isCollapsed]="isCollapsed"
           (click)="isMobile && toggleSidebar()"
-
         ></MenuButton>
       </footer>
     </nav>
