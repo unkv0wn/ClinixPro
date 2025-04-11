@@ -20,7 +20,7 @@ export class MedicalComponent {
       nome: 'Dr. Ana Paula Costa',
       crm: '123456-SP',
       telefone: '(11) 91234-5678',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '2025-04-08',
     },
     {
@@ -28,7 +28,7 @@ export class MedicalComponent {
       nome: 'Dr. Ricardo Lima',
       crm: '234567-RJ',
       telefone: '(21) 98765-4321',
-      status: 'Inativo',
+      status: false,
       atualizadoEm: '2025-03-29',
     },
     {
@@ -36,7 +36,7 @@ export class MedicalComponent {
       nome: 'Dra. Mariana Alves',
       crm: '345678-MG',
       telefone: '(31) 99876-5432',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '2025-04-02',
     },
     {
@@ -44,7 +44,7 @@ export class MedicalComponent {
       nome: 'Dr. João Pedro Silva',
       crm: '456789-SP',
       telefone: '(11) 93456-7890',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '2025-04-09',
     },
     {
@@ -52,7 +52,7 @@ export class MedicalComponent {
       nome: 'Dra. Camila Rocha',
       crm: '567890-RS',
       telefone: '(51) 98888-7777',
-      status: 'Inativo',
+      status: false,
       atualizadoEm: '2025-03-15',
     },
     {
@@ -60,7 +60,7 @@ export class MedicalComponent {
       nome: 'Dr. Gustavo Torres',
       crm: '678901-PR',
       telefone: '(41) 98765-1122',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '2025-04-05',
     },
     {
@@ -68,7 +68,7 @@ export class MedicalComponent {
       nome: 'Dra. Fernanda Martins',
       crm: '789012-BA',
       telefone: '(71) 93456-2233',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '2025-04-03',
     },
     {
@@ -76,7 +76,7 @@ export class MedicalComponent {
       nome: 'Dr. Leonardo Ferreira',
       crm: '890123-SC',
       telefone: '(48) 91234-3344',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '2025-04-01',
     },
     {
@@ -84,7 +84,7 @@ export class MedicalComponent {
       nome: 'Dra. Beatriz Nogueira',
       crm: '901234-CE',
       telefone: '(85) 97654-4455',
-      status: 'Inativo',
+      status: false,
       atualizadoEm: '2025-03-27',
     },
     {
@@ -92,7 +92,7 @@ export class MedicalComponent {
       nome: 'Dr. Tiago Mendes',
       crm: '012345-PE',
       telefone: '(81) 98765-5566',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '2025-04-07',
     },
   ];

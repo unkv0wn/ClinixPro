@@ -24,7 +24,7 @@ export class PatientComponent {
       nome: 'Matheus Fraga da Silva',
       cpf: '033.033.033-33',
       telefone: '(11) 91212-1212',
-      status: 'Inativo',
+      status: false,
       atualizadoEm: '08/04/2025'
     },
     {
@@ -32,7 +32,7 @@ export class PatientComponent {
       nome: 'Joana Marques Rocha',
       cpf: '044.044.044-44',
       telefone: '(21) 98888-7777',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '07/04/2025'
     },
     {
@@ -40,7 +40,7 @@ export class PatientComponent {
       nome: 'Carlos Henrique Melo',
       cpf: '055.055.055-55',
       telefone: '(31) 97777-6666',
-      status: 'Ativo',
+      status: false,
       atualizadoEm: '06/04/2025'
     },
     {
@@ -48,7 +48,7 @@ export class PatientComponent {
       nome: 'Carlos Henrique Melo',
       cpf: '055.055.055-55',
       telefone: '(31) 97777-6666',
-      status: 'Ativo',
+      status: true,
       atualizadoEm: '06/04/2025'
     },
     {
@@ -56,57 +56,10 @@ export class PatientComponent {
       nome: 'Carlos Henrique Melo',
       cpf: '055.055.055-55',
       telefone: '(31) 97777-6666',
-      status: 'Ativo',
+      status: false,
       atualizadoEm: '06/04/2025'
     },
-    {
-      id: 3,
-      nome: 'Carlos Henrique Melo',
-      cpf: '055.055.055-55',
-      telefone: '(31) 97777-6666',
-      status: 'Ativo',
-      atualizadoEm: '06/04/2025'
-    },
-    {
-      id: 3,
-      nome: 'Carlos Henrique Melo',
-      cpf: '055.055.055-55',
-      telefone: '(31) 97777-6666',
-      status: 'Ativo',
-      atualizadoEm: '06/04/2025'
-    },
-    {
-      id: 3,
-      nome: 'Carlos Henrique Melo',
-      cpf: '055.055.055-55',
-      telefone: '(31) 97777-6666',
-      status: 'Ativo',
-      atualizadoEm: '06/04/2025'
-    },
-    {
-      id: 3,
-      nome: 'Carlos Henrique Melo',
-      cpf: '055.055.055-55',
-      telefone: '(31) 97777-6666',
-      status: 'Ativo',
-      atualizadoEm: '06/04/2025'
-    },
-    {
-      id: 3,
-      nome: 'Carlos Henrique Melo',
-      cpf: '055.055.055-55',
-      telefone: '(31) 97777-6666',
-      status: 'Ativo',
-      atualizadoEm: '06/04/2025'
-    },
-    {
-      id: 3,
-      nome: 'Carlos Henrique Melo',
-      cpf: '055.055.055-55',
-      telefone: '(31) 97777-6666',
-      status: 'Ativo',
-      atualizadoEm: '06/04/2025'
-    },
+    
   ];
 
 }
