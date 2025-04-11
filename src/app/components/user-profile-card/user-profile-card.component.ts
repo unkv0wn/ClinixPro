@@ -39,7 +39,7 @@ export class CardPatientComponent {
   @Input() cpf: string = '';
   @Input() crm: string = '';
   @Input() phone: string = '';
-  @Input() status: string = '';
+  @Input() status: boolean = true;
   @Input() updateat: string = '';
   @Input() isMedical: boolean = false;
   @Input() isPatient: boolean = false;

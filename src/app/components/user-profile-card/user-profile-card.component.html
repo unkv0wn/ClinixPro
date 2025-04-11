@@ -11,11 +11,17 @@
       <span class="text-gray-600 font-medium text-sm"
         >ID: {{ id.toString() }}</span
       >
-      <div class="flex items-center">
+      <div *ngIf="status" class="flex items-center">
         <span
           class="inline-block h-2 w-2 rounded-full bg-green-500 mr-1"
         ></span>
-        <span class="text-sm font-medium text-green-600">{{ status }}</span>
+        <span class="text-sm font-medium text-green-600">Ativo</span>
+      </div>
+      <div *ngIf="status === false" class="flex items-center">
+        <span
+          class="inline-block h-2 w-2 rounded-full bg-red-500 mr-1"
+        ></span>
+        <span class="text-sm font-medium text-red-600">Desativado</span>
       </div>
     </div>
 

@@ -9,13 +9,19 @@
   <div class="px-6 py-4 bg-blue-50 flex justify-between items-center">
     <div class="flex items-center space-x-2">
       <span class="text-gray-600 font-medium text-sm"
-        >ID: 22233</span
+        >ID: {{ id }}</span
       >
       <div class="flex items-center">
         <span
           class="inline-block h-2 w-2 rounded-full bg-green-500 mr-1"
         ></span>
         <span class="text-sm font-medium text-green-600">Ativo</span>
+      </div>
+      <div class="flex items-center">
+        <span
+          class="inline-block h-2 w-2 rounded-full bg-red-500 mr-1"
+        ></span>
+        <span class="text-sm font-medium text-red-600">Desativado</span>
       </div>
     </div>
 
@@ -47,7 +53,7 @@
               class="text-black/60"
               [size]="18"
             ></lucide-angular>
-            <span class="font-semibold ml-1">Editar Paciente</span>
+            <span class="font-semibold ml-1">Editar Serviço</span>
           </button>
           <button
             class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-gray-100 w-full text-left"
@@ -58,7 +64,7 @@
               class="text-black/60"
               [size]="18"
             ></lucide-angular>
-            <span class="font-semibold ml-1">Remover Paciente</span>
+            <span class="font-semibold ml-1">Remover Serviço</span>
           </button>
         </div>
       </div>
