@@ -68,7 +68,17 @@
                 Observação
               </span>
               <span class="font-medium text-sm text-black/60 break-words">
-                "Paciente relatou dores intensas na região lombar, iniciadas há aproximadamente cinco dias após levantar um objeto pesado. Ele descreve a dor como latejante e contínua, com piora ao se movimentar ou permanecer sentado por longos períodos. Informou que tentou alívio com analgésicos comuns, mas sem melhora significativa. Além disso, menciona sensação de formigamento na perna esquerda e dificuldade ao caminhar. Não apresenta histórico prévio de problemas na coluna, mas relata que já teve desconfortos semelhantes em ocasiões anteriores, embora de menor intensidade e curta duração. Paciente nega febre, perda de peso ou outros sintomas associados.
+                "Paciente relatou dores intensas na região lombar, iniciadas há
+                aproximadamente cinco dias após levantar um objeto pesado. Ele
+                descreve a dor como latejante e contínua, com piora ao se
+                movimentar ou permanecer sentado por longos períodos. Informou
+                que tentou alívio com analgésicos comuns, mas sem melhora
+                significativa. Além disso, menciona sensação de formigamento na
+                perna esquerda e dificuldade ao caminhar. Não apresenta
+                histórico prévio de problemas na coluna, mas relata que já teve
+                desconfortos semelhantes em ocasiões anteriores, embora de menor
+                intensidade e curta duração. Paciente nega febre, perda de peso
+                ou outros sintomas associados.
               </span>
             </div>
           </div>
@@ -83,7 +93,33 @@
       class="bg-white h-10/12 flex flex-col mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
     >
       <!-- Titulo -->
-      <IconHeader [Icon]="TableOfContents" Title="Lista de Consultas"></IconHeader>
+      <div class="flex flex-row justify-between items-center">
+        <IconHeader
+          [Icon]="TableOfContents"
+          Title="Lista de Consultas"
+        ></IconHeader>
+        <div class="-mt-4">
+          <button
+            class="group flex flex-row bg-black/4 hover:bg-blue-primary rounded-md text-xs font-medium p-2 w-full cursor-pointer items-center hover:text-white"
+            type="button"
+            (click)="ShowModalConsult()"          >
+            <lucide-angular
+              [img]="Plus"
+              class="text-black/70 group-hover:text-white"
+              [size]="20"
+            ></lucide-angular>
+            <span
+              class="ml-2 mr-2 text-base font-semibold text-black/70 group-hover:text-white"
+            >
+              Adicionar
+            </span>
+          </button>
+        </div>
+        <app-new-consult
+          *ngIf="isModalConsult === true"
+          (closed)="ShowModalConsult()"
+        ></app-new-consult>
+      </div>
       <!-- Tabela de dados -->
       <div
         class="max-h-80 overflow-y-auto scroll-smooth rounded-lg shadow-[0_0_4px_rgba(0,0,0,0.25)] scroll-container"
@@ -91,7 +127,7 @@
         <table class="p-2 w-full h-full">
           <thead class="rounded-t-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
             <tr>
-              <th class="p-2 text-left text-black/40 font-base  w-1/12">
+              <th class="p-2 text-left text-black/40 font-base w-1/12">
                 Protocolo
               </th>
               <th class="p-2 text-left text-black/40 w-1/4">Paciente</th>
@@ -125,12 +161,6 @@
                   aria-label="Ações"
                 >
                   <lucide-angular [img]="Printer" [size]="20"></lucide-angular>
-                </button>
-                <button
-                  class="text-black/70 hover:text-blue-primary rounded-full p-1 ml-2"
-                  aria-label="Ações"
-                >
-                  <lucide-angular [img]="Trash" [size]="20"></lucide-angular>
                 </button>
               </td>
             </tr>
