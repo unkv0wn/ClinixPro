@@ -82,7 +82,7 @@ export class SidebarComponent {
       title: 'Painel Principal',
       items: [
         { text: 'Pagina principal', icon: LayoutDashboard, route: '/index' },
-        { text: 'Agendamentos', icon: NotebookText, route: '/agendamentos' },
+        { text: 'Consultas', icon: NotebookText, route: '/agendamentos' },
         { text: 'Financeiro', icon: Banknote, route: '/financeiro' },
       ],
     },

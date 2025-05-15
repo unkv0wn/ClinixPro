@@ -13,6 +13,7 @@ import {
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { NotionRowComponent } from '../../components/notion-row/notion-row.component';
 import { CreateNotionComponent } from "../../components/modals/create-notion/create-notion.component";
+import { NewConsultComponent } from "../../components/modals/new-consult/new-consult.component";
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,8 @@ import { CreateNotionComponent } from "../../components/modals/create-notion/cre
     IconHeaderComponent,
     NotionRowComponent,
     CommonModule,
-    CreateNotionComponent
+    CreateNotionComponent,
+    NewConsultComponent
 ],
 })
 export class HomeComponent {
@@ -40,6 +42,14 @@ export class HomeComponent {
   isOpen: number | null = null;
   isRotated: boolean = false;
   isModal: boolean = false;
+  isModalConsult: boolean = false;
+   date: Date = new Date();
+   dia: number = this.date.getDate();
+   mes: string = (this.date.getMonth() + 1).toString().padStart(2, '0');
+   ano: number = this.date.getFullYear();
+
+
+
 
   /*Inicia instacia de mockup de dados como desmontração de uso serviço para os agendamentos */
   appointments = [
@@ -101,6 +111,10 @@ export class HomeComponent {
 
   showModal() {
     this.isModal = !this.isModal;
+  }
+
+  ShowModalConsult() {
+    this.isModalConsult = !this.isModalConsult;
   }
 
 

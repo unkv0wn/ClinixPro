@@ -9,6 +9,7 @@ Sendo possivel utilizar em uma clinica odontologica, medica, fisioterapia etc..
 - Tailwind CSS Versão 4.0.0
 - NestJS
 - PostgreSQL
+- HighCharts
 
 ## Estrutura de pastas
 
