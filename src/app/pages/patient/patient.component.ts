@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
-import {
-  LucideAngularModule,
-
-  Users,
-} from 'lucide-angular';
+import { ChevronsLeft, ChevronsRight, LucideAngularModule, Users } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
-import { CardPatientComponent } from "../../components/user-profile-card/user-profile-card.component";
-
+import { CardPatientComponent } from '../../components/user-profile-card/user-profile-card.component';
 
 @Component({
   selector: 'app-patient',
-  imports: [IconHeaderComponent, LucideAngularModule, CommonModule, CardPatientComponent],
+  imports: [
+    IconHeaderComponent,
+    LucideAngularModule,
+    CommonModule,
+    CardPatientComponent,
+  ],
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css'],
 })
 export class PatientComponent {
   readonly Users = Users;
+  readonly Chevronsright = ChevronsRight;
+  readonly Chevronleft = ChevronsLeft;
 
   pacientes = [
     {
@@ -25,7 +27,7 @@ export class PatientComponent {
       cpf: '033.033.033-33',
       telefone: '(11) 91212-1212',
       status: false,
-      atualizadoEm: '08/04/2025'
+      atualizadoEm: '08/04/2025',
     },
     {
       id: 2,
@@ -33,7 +35,7 @@ export class PatientComponent {
       cpf: '044.044.044-44',
       telefone: '(21) 98888-7777',
       status: true,
-      atualizadoEm: '07/04/2025'
+      atualizadoEm: '07/04/2025',
     },
     {
       id: 3,
@@ -41,7 +43,7 @@ export class PatientComponent {
       cpf: '055.055.055-55',
       telefone: '(31) 97777-6666',
       status: false,
-      atualizadoEm: '06/04/2025'
+      atualizadoEm: '06/04/2025',
     },
     {
       id: 3,
@@ -49,7 +51,7 @@ export class PatientComponent {
       cpf: '055.055.055-55',
       telefone: '(31) 97777-6666',
       status: true,
-      atualizadoEm: '06/04/2025'
+      atualizadoEm: '06/04/2025',
     },
     {
       id: 3,
@@ -57,9 +59,7 @@ export class PatientComponent {
       cpf: '055.055.055-55',
       telefone: '(31) 97777-6666',
       status: false,
-      atualizadoEm: '06/04/2025'
+      atualizadoEm: '06/04/2025',
     },
-    
   ];
-
 }

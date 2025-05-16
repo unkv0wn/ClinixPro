@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
-import { CardPatientComponent } from "../../components/user-profile-card/user-profile-card.component";
-import { IconHeaderComponent } from "../../components/icon-header/icon-header.component";
-import { LucideAngularModule, Users } from 'lucide-angular';
+import { CardPatientComponent } from '../../components/user-profile-card/user-profile-card.component';
+import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
+import { ChevronsLeft, ChevronsRight, LucideAngularModule, Users } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-medical',
-  imports: [CardPatientComponent, IconHeaderComponent, LucideAngularModule, CommonModule],
+  imports: [
+    CardPatientComponent,
+    IconHeaderComponent,
+    LucideAngularModule,
+    CommonModule,
+  ],
   templateUrl: './medical.component.html',
-
 })
 export class MedicalComponent {
-
   readonly Users = Users;
+  readonly Chevronsright = ChevronsRight;
+  readonly Chevronleft = ChevronsLeft;
 
   medicos = [
     {
@@ -96,5 +101,4 @@ export class MedicalComponent {
       atualizadoEm: '2025-04-07',
     },
   ];
-  
 }

@@ -1,43 +1,67 @@
 <body class="flex flex-col h-screen p-4">
-    <!-- Parte de Cima - Card de detalhes -->
-    <section class="w-full h-24">
-      <div class="flex items-center justify-between h-full px-10">
-        <div class="mt-4">
-          <IconHeader [Icon]="Users" Title="Cadastro de Medicos"></IconHeader>
-        </div>
-        <div>
+  <!-- Parte de Cima - Card de detalhes -->
+  <section class="w-full h-24">
+    <div class="flex items-center justify-between h-full px-10">
+      <div class="mt-4">
+        <IconHeader [Icon]="Users" Title="Cadastro de Medicos"></IconHeader>
+      </div>
+      <div>
+        <button
+          class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
+        >
+          Novo Medico
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parte Baixo - Tabela -->
+  <section class="h-full min-w-0">
+    <article class="bg-white h-full flex flex-col mr-11 ml-11 mt-3 mb-9">
+      <!-- Botoes para navagecao de paginas -->
+      <div class="w-full h-10 flex justify-end items-center gap-4">
+        <div class="group">
           <button
-            class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
+            class="bg-black/10 group-hover:bg-blue-500 h-12 w-12 rounded-lg flex items-center justify-center transition-colors duration-300"
           >
-            Novo Medico
+            <lucide-angular
+              [img]="Chevronleft"
+              class="text-black/60 group-hover:text-white transition-colors duration-300"
+              [size]="24"
+            ></lucide-angular>
+          </button>
+        </div>
+        <div class="group">
+          <button
+            class="bg-black/10 group-hover:bg-blue-500 h-12 w-12 rounded-lg flex items-center justify-center transition-colors duration-300"
+          >
+            <lucide-angular
+              [img]="Chevronsright"
+              class="text-black/60 group-hover:text-white transition-colors duration-300"
+              [size]="24"
+            ></lucide-angular>
           </button>
         </div>
       </div>
-    </section>
-  
-    <!-- Parte Baixo - Tabela -->
-    <section class="h-full min-w-0">
-      <article class="bg-white h-full flex flex-col mr-11 ml-11 mt-5 mb-9">
-        <!-- Container com scroll -->
-        <div class="h-[calc(100vh-85px)] flex flex-col">
-          <!-- Área com scroll -->
-          <div class="flex-1 rounded-lg overflow-y-auto scroll-container">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <user-profile-card
-                *ngFor="let medicos of medicos"
-                [id]="medicos.id"
-                [name]="medicos.nome"
-                [crm]="medicos.crm"
-                [phone]="medicos.telefone"
-                [status]="medicos.status"
-                [updateat]="medicos.atualizadoEm"
-                [isMedical]="true"
-                class="h-full"
-              ></user-profile-card>
-            </div>
+      <!-- Container com scroll -->
+      <div class="h-[calc(100vh-85px)] flex flex-col mt-4">
+        <!-- Área com scroll -->
+        <div class="flex-1 rounded-lg overflow-y-auto scroll-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <user-profile-card
+              *ngFor="let medicos of medicos"
+              [id]="medicos.id"
+              [name]="medicos.nome"
+              [crm]="medicos.crm"
+              [phone]="medicos.telefone"
+              [status]="medicos.status"
+              [updateat]="medicos.atualizadoEm"
+              [isMedical]="true"
+              class="h-full"
+            ></user-profile-card>
           </div>
         </div>
-      </article>
-    </section>
-  </body>
-  
+      </div>
+    </article>
+  </section>
+</body>

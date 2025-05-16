@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LucideAngularModule, Users } from 'lucide-angular';
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, LucideAngularModule, Users } from 'lucide-angular';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { ServicePaymentCardComponent } from "../../components/service-payment-card/service-payment-card.component";
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ServicesComponent {
   readonly Users = Users;
+  readonly Chevronsright = ChevronsRight
+  readonly Chevronleft = ChevronsLeft
 
   medicalServices = [
     { id: 1, name: 'Consulta Clínica Geral', value: 150, status: true, updateat: '2025-04-01' },
