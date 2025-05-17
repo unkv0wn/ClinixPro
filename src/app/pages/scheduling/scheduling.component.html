@@ -102,7 +102,8 @@
           <button
             class="group flex flex-row bg-black/4 hover:bg-blue-primary rounded-md text-xs font-medium p-2 w-full cursor-pointer items-center hover:text-white"
             type="button"
-            (click)="ShowModalConsult()"          >
+            (click)="ShowModalConsult()"
+          >
             <lucide-angular
               [img]="Plus"
               class="text-black/70 group-hover:text-white"
@@ -133,6 +134,7 @@
               <th class="p-2 text-left text-black/40 w-1/4">Paciente</th>
               <th class="p-2 text-left text-black/40 w-1/10">Tipo Consulta</th>
               <th class="p-2 text-left text-black/40 w-1/12">Data</th>
+              <th class="p-2 text-left text-black/40 w-1/12">Valor</th>
               <th class="p-2 text-left text-black/40 w-1/6">Ações</th>
             </tr>
           </thead>
@@ -149,6 +151,9 @@
               <td class="p-2 text-black/60 font-medium text-base">
                 10/19/1990
               </td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                270.00
+              </td>
               <td class="p-2 text-black/60 font-medium text-base text-left">
                 <button
                   class="text-black/70 hover:text-blue-primary rounded-full p-1"
@@ -161,6 +166,12 @@
                   aria-label="Ações"
                 >
                   <lucide-angular [img]="Printer" [size]="20"></lucide-angular>
+                </button>
+                <button
+                  class="text-black/70 hover:text-blue-primary rounded-full p-1 ml-2"
+                  aria-label="Ações"
+                >
+                  <lucide-angular [img]="Trash" [size]="20"></lucide-angular>
                 </button>
               </td>
             </tr>
