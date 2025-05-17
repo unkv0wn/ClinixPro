@@ -1,6 +1,6 @@
 <body class="flex flex-col h-screen p-4">
   <!-- Parte de Cima - Card de detalhes -->
-  <section class="w-full h-24 ">
+  <section class="w-full h-24">
     <div class="flex items-center justify-between h-full px-10">
       <div class="mt-4">
         <IconHeader [Icon]="Users" Title="Cadastro de Pacientes"></IconHeader>
@@ -8,18 +8,22 @@
       <div>
         <button
           class="bg-blue-primary font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
+          (click)="showModal()"
         >
           Novo Paciente
         </button>
       </div>
     </div>
   </section>
+  <app-new-patient
+    *ngIf="isModal === true"
+    (closed)="showModal()"
+  ></app-new-patient>
 
   <!-- Parte Baixo - Tabela -->
   <section class="h-full min-w-0">
     <article class="bg-white h-full flex flex-col mr-11 ml-11 mt-3 mb-9">
-
-       <!-- Botoes para navagecao de paginas -->
+      <!-- Botoes para navagecao de paginas -->
       <div class="w-full h-10 flex justify-end items-center gap-4">
         <div class="group">
           <button
