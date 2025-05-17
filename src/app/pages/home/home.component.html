@@ -6,17 +6,23 @@
     <article
       class="bg-white w-full h-auto mr-3 md:mr-11 ml-3 md:ml-11 mt-5 md:mt-10 p-4 md:p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
     >
-    <div class="flex items-start justify-between m-0">
-      <IconHeader [Icon]="NotebookPen" Title="Consultas dia {{dia}}/{{mes}}/{{ano}}"></IconHeader>
-      <button
+      <div class="flex items-start justify-between m-0">
+        <IconHeader
+          [Icon]="NotebookPen"
+          Title="Consultas dia {{ dia }}/{{ mes }}/{{ ano }}"
+        ></IconHeader>
+        <button
         class="text-black/70 mr-2.5 p-1 hover:text-blue-primary"
         aria-label="Voltar"
         (click)="ShowModalConsult()"
       >
         <lucide-angular [img]="Plus" [size]="24"></lucide-angular>   
       </button>
-    </div>
-    <app-new-consult *ngIf="isModalConsult === true" (closed)="ShowModalConsult()"></app-new-consult>
+      </div>
+      <app-new-consult
+        *ngIf="isModalConsult === true"
+        (closed)="ShowModalConsult()"
+      ></app-new-consult>
 
       <!-- Lista de agendamentos do dia -->
       <ul class="flex flex-col items-center md:items-start">
@@ -95,7 +101,10 @@
           <lucide-angular [img]="Plus" [size]="24"></lucide-angular>
         </button>
       </div>
-      <app-create-notion *ngIf="isModal === true" (closed)="showModal()"></app-create-notion>
+      <app-create-notion
+        *ngIf="isModal === true"
+        (closed)="showModal()"
+      ></app-create-notion>
 
       <!-- Conteudo -->
       <ul class="flex flex-col items-center">
