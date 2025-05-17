@@ -7,6 +7,7 @@ import {
   Trash2,
   Printer,
   FileText,
+  Banknote,
 } from 'lucide-angular';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { CommonModule } from '@angular/common';
@@ -32,6 +33,7 @@ export class FinancalComponent implements OnInit {
   readonly Trash = Trash2;
   readonly Printer = Printer;
   readonly TableOfContents = FileText;
+  readonly BankNote = Banknote
 
   notions = [
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
