@@ -12,10 +12,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-date-input',
+  selector: 'InputDate',
   imports: [CommonModule, FormsModule],
   templateUrl: './date-input.component.html',
-  styleUrl: './date-input.component.css',
 })
 export class DateInputComponent {
     @Input() label = ""

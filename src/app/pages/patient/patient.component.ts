@@ -8,7 +8,7 @@ import {
 } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { CardPatientComponent } from '../../components/user-profile-card/user-profile-card.component';
-import { NewPatientComponent } from '../../components/modals/new-patient/new-patient.component';
+import { NewProfileComponent } from '../../components/modals/new-profile/new-profile.component';
 
 @Component({
   selector: 'app-patient',
@@ -17,7 +17,7 @@ import { NewPatientComponent } from '../../components/modals/new-patient/new-pat
     LucideAngularModule,
     CommonModule,
     CardPatientComponent,
-    NewPatientComponent,
+    NewProfileComponent,
   ],
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css'],
