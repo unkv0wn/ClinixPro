@@ -1,8 +1,14 @@
 import { Component } from '@angular/core';
 import { CardPatientComponent } from '../../components/user-profile-card/user-profile-card.component';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
-import { ChevronsLeft, ChevronsRight, LucideAngularModule, Users } from 'lucide-angular';
+import {
+  ChevronsLeft,
+  ChevronsRight,
+  LucideAngularModule,
+  Users,
+} from 'lucide-angular';
 import { CommonModule } from '@angular/common';
+import { NewProfileComponent } from "../../components/modals/new-profile/new-profile.component";
 
 @Component({
   selector: 'app-medical',
@@ -11,13 +17,19 @@ import { CommonModule } from '@angular/common';
     IconHeaderComponent,
     LucideAngularModule,
     CommonModule,
-  ],
+    NewProfileComponent
+],
   templateUrl: './medical.component.html',
 })
 export class MedicalComponent {
   readonly Users = Users;
   readonly Chevronsright = ChevronsRight;
   readonly Chevronleft = ChevronsLeft;
+  isModal: boolean = false;
+
+  showModal() {
+    this.isModal = !this.isModal;
+  }
 
   medicos = [
     {

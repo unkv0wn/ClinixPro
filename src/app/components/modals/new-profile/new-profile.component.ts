@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { InputFieldComponent } from '../../input-field/input-field.component';
 import { ComboBoxFieldComponent } from '../../combo-box-field/combo-box-field.component';
 import { CommonModule } from '@angular/common';
@@ -16,6 +16,7 @@ import { DateInputComponent } from '../../date-input/date-input.component';
 })
 export class NewProfileComponent {
   @Output() closed = new EventEmitter<void>();
+  @Input() isMedical : boolean = false;
 
   stopPropagation(event: MouseEvent) {
     event.stopPropagation();
@@ -27,7 +28,7 @@ export class NewProfileComponent {
   }
 
   selectedgender: any = null;
-  isMedical = false;
+
 
   onGenderSelected(Gender: any) {
     this.selectedgender = Gender; // Armazena o médico selecionado

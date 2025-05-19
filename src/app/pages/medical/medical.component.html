@@ -8,12 +8,18 @@
       <div>
         <button
           class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
-        >
+          (click)="showModal()"        
+          >
           Novo Medico
         </button>
       </div>
     </div>
   </section>
+  <app-new-profile
+    *ngIf="isModal === true"
+    (closed)="showModal()"
+    [isMedical]="true"
+  ></app-new-profile>
 
   <!-- Parte Baixo - Tabela -->
   <section class="h-full min-w-0">
