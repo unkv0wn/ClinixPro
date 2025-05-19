@@ -13,10 +13,11 @@ import {
   User,
   Users,
 } from 'lucide-angular';
+import { ChangeStatusProfileComponent } from '../modals/change-status-profile/change-status-profile.component';
 
 @Component({
   selector: 'user-profile-card',
-  imports: [LucideAngularModule, CommonModule],
+  imports: [LucideAngularModule, CommonModule, ChangeStatusProfileComponent],
   templateUrl: './user-profile-card.component.html',
 })
 export class CardPatientComponent {
@@ -32,6 +33,11 @@ export class CardPatientComponent {
   readonly MoreHorizontal = MoreHorizontal;
 
   showOptions = false;
+  isModal: boolean = false;
+
+  showModal() {
+    this.isModal = !this.isModal;
+  }
 
   // Inputs dinâmicos
   @Input() id: number = 0;
