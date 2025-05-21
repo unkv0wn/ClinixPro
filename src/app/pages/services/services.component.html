@@ -8,12 +8,18 @@
       <div>
         <button
           class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
-        >
+        
+          (click)="showModal()">
           Novo Serviço
         </button>
       </div>
     </div>
   </section>
+    <app-new-service-payment
+    *ngIf="isModal === true"
+    (closed)="showModal()"
+    [IsPaymentForm]="false"
+  ></app-new-service-payment>
 
   <!-- Parte Baixo - Tabela -->
   <section class="h-full min-w-0">

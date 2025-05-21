@@ -1,0 +1,46 @@
+<!-- Modal -->
+<div
+  class="fixed inset-0 bg-black/5 flex items-center justify-center z-50"
+  (click)="closeModal()"
+>
+  <!-- Conteudo -->
+  <div
+    class="bg-white p-9 flex flex-col rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)] w-[812px] gap-2"
+    (click)="$event.stopPropagation()"
+  >
+    
+    <div class="flex flex-col gap-3" *ngIf="!IsPaymentForm">
+      <div class="flex-1">
+        <forminput label="Serviço" type="text" placeholder="Massagem Muscular"></forminput>
+      </div>
+      <div  class="flex-1">
+        <forminput label="Valor" type="text" placeholder="100.00"></forminput>
+      </div>
+    </div>
+    
+    <div class="flex flex-col gap-3" *ngIf="IsPaymentForm">
+      <div class="flex-1">
+        <forminput label="Forma Pagamento" type="text" placeholder="DI"></forminput>
+      </div>
+      <div class="flex-1">
+        <forminput label="Descriçao" type="text" placeholder="Dinheiro"></forminput>
+      </div>
+    </div>
+    
+    <!-- Botões de navegação -->
+    <div class="flex justify-between pt-4 border-t">
+      <!-- Voltar -->
+      <button
+        class="p-4 border rounded-lg border-gray-200 text-sm font-semibold text-center shadow hover:bg-zinc-100"
+      >
+        Voltar
+      </button>
+      <!-- Avançar -->
+      <button
+        class="p-4 border rounded-lg border-gray-200 text-sm font-semibold text-center shadow hover:bg-blue-primary hover:text-white"
+      >
+        Concluir
+      </button>
+    </div>
+  </div>
+

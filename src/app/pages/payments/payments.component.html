@@ -1,25 +1,33 @@
 <body class="flex flex-col h-screen p-4">
-    <!-- Parte de Cima - Card de detalhes -->
-    <section class="w-full h-24">
-      <div class="flex items-center justify-between h-full px-10">
-        <div class="mt-4">
-          <IconHeader [Icon]="Users" Title="Cadastro de Formas de pagamento"></IconHeader>
-        </div>
-        <div>
-          <button
-            class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
-          >
-            Nova Forma
-          </button>
-        </div>
+  <!-- Parte de Cima - Card de detalhes -->
+  <section class="w-full h-24">
+    <div class="flex items-center justify-between h-full px-10">
+      <div class="mt-4">
+        <IconHeader
+          [Icon]="Users"
+          Title="Cadastro de Formas de pagamento"
+        ></IconHeader>
       </div>
-    </section>
-  
-    <!-- Parte Baixo - Tabela -->
-    <section class="h-full min-w-0">
-      <article class="bg-white h-full flex flex-col mr-11 ml-11 mt-3 mb-9">
+      <div>
+        <button
+          class="bg-blue-500 font-primary hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-[8px] focus:outline-none focus:shadow-outline"
+          (click)="showModal()"
+        >
+          Nova Forma
+        </button>
+      </div>
+    </div>
+  </section>
+  <app-new-service-payment
+    *ngIf="isModal === true"
+    (closed)="showModal()"
+    [IsPaymentForm]="true"
+  ></app-new-service-payment>
 
-         <!-- Botoes para navagecao de paginas -->
+  <!-- Parte Baixo - Tabela -->
+  <section class="h-full min-w-0">
+    <article class="bg-white h-full flex flex-col mr-11 ml-11 mt-3 mb-9">
+      <!-- Botoes para navagecao de paginas -->
       <div class="w-full h-10 flex justify-end items-center gap-4">
         <div class="group">
           <button
@@ -43,28 +51,26 @@
             ></lucide-angular>
           </button>
         </div>
-      </div> 
-        <!-- Container com scroll -->
-        <div class="h-[calc(100vh-85px)] flex flex-col mt-4">
-          <!-- Área com scroll -->
-          <div class="flex-1 rounded-lg overflow-y-auto scroll-container">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div *ngFor="let payment of paymentMethods">
-                <app-service-payment-card
-                  [id]="payment.id"
-                  [name]="payment.name"
-                  [abreviation]="payment.abreviation"
-                  [status]="payment.status"
-                  [updateat]="payment.updateat"
-                  [isPayment]="true"
-                  >
-                  
-                </app-service-payment-card>
-              </div>
+      </div>
+      <!-- Container com scroll -->
+      <div class="h-[calc(100vh-85px)] flex flex-col mt-4">
+        <!-- Área com scroll -->
+        <div class="flex-1 rounded-lg overflow-y-auto scroll-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div *ngFor="let payment of paymentMethods">
+              <app-service-payment-card
+                [id]="payment.id"
+                [name]="payment.name"
+                [abreviation]="payment.abreviation"
+                [status]="payment.status"
+                [updateat]="payment.updateat"
+                [isPayment]="true"
+              >
+              </app-service-payment-card>
             </div>
           </div>
         </div>
-      </article>
-    </section>
-  </body>
-  
+      </div>
+    </article>
+  </section>
+</body>

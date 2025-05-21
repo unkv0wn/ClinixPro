@@ -1,8 +1,14 @@
 import { Component } from '@angular/core';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
-import { ChevronsLeft, ChevronsRight, LucideAngularModule, Users } from 'lucide-angular';
+import {
+  ChevronsLeft,
+  ChevronsRight,
+  LucideAngularModule,
+  Users,
+} from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { ServicePaymentCardComponent } from '../../components/service-payment-card/service-payment-card.component';
+import { NewServicePaymentComponent } from '../../components/modals/new-service-payment/new-service-payment.component';
 
 @Component({
   selector: 'app-payments',
@@ -11,6 +17,7 @@ import { ServicePaymentCardComponent } from '../../components/service-payment-ca
     LucideAngularModule,
     CommonModule,
     ServicePaymentCardComponent,
+    NewServicePaymentComponent,
   ],
   templateUrl: './payments.component.html',
   styleUrl: './payments.component.css',
@@ -19,6 +26,11 @@ export class PaymentsComponent {
   readonly Users = Users;
   readonly Chevronsright = ChevronsRight;
   readonly Chevronleft = ChevronsLeft;
+  isModal: boolean = false;
+
+  showModal() {
+    this.isModal = !this.isModal;
+  }
 
   paymentMethods = [
     {
