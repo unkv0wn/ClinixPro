@@ -12,6 +12,7 @@ import {
   IdCard,
   Stethoscope,
   HandCoins,
+  X,
 } from 'lucide-angular';
 import { MenuButtonComponent } from '../menu-button/menu-button.component';
 import { CommonModule } from '@angular/common';
@@ -36,6 +37,7 @@ export class SidebarComponent {
   readonly LogOut = LogOut;
   readonly MenuIcon = MenuIcon;
   readonly Users = Users;
+  readonly MenuIconClose = X;
   readonly IdCard = IdCard;
   readonly Stethoscope = Stethoscope;
   readonly HandCoins = HandCoins;
