@@ -1,0 +1,38 @@
+<div
+  class="flex h-full flex-col rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
+>
+  <div class="flex flex-row justify-between w-full">
+    <h1 class="text-[18px] font-semibold text-black/60">{{ title }}</h1>
+    <lucide-angular
+      *ngIf="icon"
+      [img]="icon"
+      [class]="iconColor"
+      [size]="26"
+    ></lucide-angular>
+  </div>
+  <div class="flex mt-2 justify-start h-full">
+    <h1 class="text-6xl font-bold text-black/80">{{ value }}</h1>
+  </div>
+  <!-- grafico Positivo -->
+  <div class="flex items-center gap-1 mt-2" *ngIf="status === 'positive'">
+    <lucide-angular
+      [img]="trendinup"
+      class="text-green-500"
+      [size]="26"
+    ></lucide-angular>
+    <span class="text-sm text-green-600 font-medium"
+      >+{{ percent }}% este mês</span
+    >
+  </div>
+  <!-- grafico negativo -->
+  <div class="flex items-center gap-1 mt-2" *ngIf="status === 'negative'">
+    <lucide-angular
+      [img]="trendinup"
+      class="text-red-500"
+      [size]="26"
+    ></lucide-angular>
+    <span class="text-sm text-red-600 font-medium"
+      >-{{ percent }}% este mês</span
+    >
+  </div>
+</div>

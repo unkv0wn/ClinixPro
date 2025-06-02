@@ -1,118 +1,179 @@
-<body class="flex flex-col mt-10 md:mt-0 md:flex-row h-full md:h-screen">
-  <!-- Lado esquerdo - Agendamentos -->
-  <section
-    class="w-auto md:w-1/2 flex justify-center md:justify-start items-start"
-  >
-    <article
-      class="bg-white w-full h-auto mr-3 md:mr-11 ml-3 md:ml-11 mt-5 md:mt-10 p-4 md:p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
-    >
-      <div class="flex items-start justify-between m-0">
-        <IconHeader
-          [Icon]="NotebookPen"
-          Title="Consultas dia {{ dia }}/{{ mes }}/{{ ano }}"
-        ></IconHeader>
-        <button
-        class="text-black/70 mr-2.5 p-1 hover:text-blue-primary"
-        aria-label="Voltar"
-        (click)="ShowModalConsult()"
-      >
-        <lucide-angular [img]="Plus" [size]="24"></lucide-angular>   
-      </button>
-      </div>
-      <app-new-consult
-        *ngIf="isModalConsult === true"
-        (closed)="ShowModalConsult()"
-      ></app-new-consult>
-
-      <!-- Lista de agendamentos do dia -->
-      <ul class="flex flex-col items-center md:items-start">
-        <li
-          *ngFor="let appointment of appointments; let i = index"
-          class="w-full"
+<div class="flex flex-col mt-10 md:mt-0 md:flex-col h-full md:h-screen">
+  <div class="flex-1 flex flex-row">
+    <div class="flex-1 flex flex-col p-6 gap-4">
+      <!-- Card 1 -->
+      <BasicCard
+        class="w-full h-full"
+        title="Animais disponiveis"
+        [icon]="paw"
+        iconColor="text-yellow-500"
+        [status]="'positive'"
+        [value]="127"
+        [percent]="12"
+      ></BasicCard>
+      <!-- Card 2 -->
+      <BasicCard
+        class="w-full h-full"
+        title="Total de adoções"
+        [icon]="heart"
+        iconColor="text-red-500"
+        [status]="'negative'"
+        [value]="23"
+        [percent]="20"
+      ></BasicCard>
+    </div>
+    <div class="flex-2 flex justify-center items-center p-6">
+      <!-- Lado direito - Conteúdo adicional -->
+      <div class="w-full flex items-center">
+        <div
+          class="w-full h-full rounded-lg p-4 md:p-8 shadow-[0_0_8px_rgba(0,0,0,0.25)] mr-6 md:mr-0"
         >
-          <div
-            class="flex items-center justify-between p-2 border-2 rounded-lg border-black/10 shadow-[0_0_4px_rgba(0,0,0,0.25)] mt-2"
-          >
-            <div class="flex items-center">
-              <lucide-angular
-                [img]="Clock"
-                class="text-blue-primary"
-                [size]="24"
-              ></lucide-angular>
-              <time class="ml-3 text-base font-semibold text-black/50">
-                {{ appointment.time }}
-              </time>
-            </div>
+          <!-- titulo -->
+          <div class="flex items-start justify-between m-0">
+            <IconHeader [Icon]="Pin" Title="Anotações"></IconHeader>
             <button
-              class="text-black/70 rounded-full p-1 transition-normal duration-300 ease-in-out"
-              [class.-rotate-90]="isOpen === i"
-              aria-label="Expandir"
-              (click)="showInfo(i)"
+              class="text-black/70 mr-2.5 p-1 hover:text-blue-primary"
+              aria-label="Voltar"
+              (click)="showModal()"
             >
-              <lucide-angular
-                [img]="ChevronLeft"
-                class="text-black/50"
-                [size]="32"
-              ></lucide-angular>
+              <lucide-angular [img]="Plus" [size]="24"></lucide-angular>
             </button>
           </div>
-          <!-- Container que aparece ao clicar -->
-          <div
-            *ngIf="isOpen === i"
-            class="p-4 bg-gray-100 flex flex-col rounded-lg mt-2 shadow transition-all"
+          <app-create-notion
+            *ngIf="isModal === true"
+            (closed)="showModal()"
+          ></app-create-notion>
+
+          <!-- Conteudo -->
+          <ul class="flex flex-col items-center">
+            <li *ngFor="let notion of notions; let i = index" class="w-full">
+              <!-- Messagens de Anotações -->
+              <NotionRow [notion]="notion" [index]="i"></NotionRow>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-2 p-6">
+    <div
+      class="flex h-full flex-col w-full rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
+    >
+      <div class="flex flex-row w-full justify-between">
+        <div class="flex flex-row gap-2">
+          <lucide-angular
+            [img]="heart"
+            class="text-red-500"
+            [size]="24"
+          ></lucide-angular>
+          <span class="text-base text-black/60 font-semibold"
+            >Consulta do dia</span
           >
-            <div class="flex flex-col md:flex-row md:justify-between p-2">
-              <span class="text-base text-black/60 font-semibold">
-                Paciente : {{ appointment.paciente }}
-              </span>
-              <span class="text-base text-black/60 font-semibold">
-                Telefone : {{ appointment.telefone }}
-              </span>
+        </div>
+        <!-- Botoes de navegacao -->
+        <div class="flex -mt-4 gap-4">
+          <Button
+            class="flex items-center border border-gray-200 rounded-lg p-1"
+          >
+            <lucide-angular
+              [img]="Chevronleft"
+              class="text-black/50"
+              [size]="24"
+            ></lucide-angular
+          ></Button>
+          <Button
+            class="flex items-center border border-gray-200 rounded-lg p-1"
+          >
+            <lucide-angular
+              [img]="Chevronright"
+              class="text-black/50"
+              [size]="24"
+            ></lucide-angular
+          ></Button>
+        </div>
+      </div>
+      <!-- Cards de adoção -->
+      <div class="grid grid-cols-4 gap-4 h-full">
+        <div
+          class="flex flex-col border border-gray-200 max-w-[320px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md p-4"
+        >
+          <div class="flex-1 flex">
+            <div class="flex-1 bg-amber-200 rounded-full">
+              <!-- Imagem do animal (imagem da web) -->
+              <div class="w-36 h-36 rounded-full overflow-hidden bg-gray-200">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Foto do animal"
+                  class="w-full h-full object-cover"
+                />
+              </div>
             </div>
-            <div class="flex flex-col md:flex-row md:justify-between p-2">
-              <span class="text-base text-black/60 font-semibold">
-                Tipo Consulta : {{ appointment.tipoConsulta }}
-              </span>
-              <span class="md:mr-10 text-base text-black/60 font-semibold">
-                Valor Total : {{ appointment.valorTotal.toFixed(2) }}
-              </span>
+            <div
+              class="flex-1 w-full flex flex-col justify-center items-center p-2"
+            >
+              <div class="flex-1 flex w-full">
+                <lucide-angular
+                  [img]="Clock"
+                  class="text-blue-primary"
+                  [size]="24"
+                ></lucide-angular>
+                <h2 class="font-medium text-base ml-1 text-black/70">
+                  Horario
+                </h2>
+              </div>
+              <div class="flex-3 flex w-full">
+                <lucide-angular
+                  [img]="Clock"
+                  class="text-blue-primary"
+                  [size]="24"
+                ></lucide-angular>
+                <h2 class="font-medium text-base ml-1 text-black/70">
+                  08:00 - 08:30
+                </h2>
+              </div>
             </div>
           </div>
-        </li>
-      </ul>
-    </article>
-  </section>
-
-  <!-- Lado direito - Conteúdo adicional -->
-  <aside
-    class="w-full md:w-1/2 flex items-start mt-5 md:mt-10 ml-3 md:ml-0 md:mr-10"
-  >
-    <div
-      class="w-full h-auto rounded-lg p-4 md:p-8 shadow-[0_0_8px_rgba(0,0,0,0.25)] mr-6 md:mr-0"
-    >
-      <!-- titulo -->
-      <div class="flex items-start justify-between m-0">
-        <IconHeader [Icon]="Pin" Title="Anotações"></IconHeader>
-        <button
-          class="text-black/70 mr-2.5 p-1 hover:text-blue-primary"
-          aria-label="Voltar"
-          (click)="showModal()"
-        >
-          <lucide-angular [img]="Plus" [size]="24"></lucide-angular>
-        </button>
+          <div class="flex-1 p-2">
+            <h3 class="font-semibold text-black/60 text-lg mb-3">
+              Cria da silva
+            </h3>
+            <div class="flex items-center gap-2">
+              <!-- <lucide-angular
+                [img]="Stethoscope"
+                class="w-4 h-4 text-blue-600"
+              ></lucide-angular> -->
+              <span class="text-sm font-medium text-black-60">Médico:</span>
+              <span class="text-sm text-black-50">Dr. Ana Silva</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <!-- <lucide-angular
+                [img]="Stethoscope"
+                class="w-4 h-4 text-blue-600"
+              ></lucide-angular> -->
+              <span class="text-sm font-medium text-black-60"
+                >Tipo da Consulta:</span
+              >
+              <span class="text-sm text-black-50">Dr. Ana Silva</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <!-- <lucide-angular
+                [img]="Stethoscope"
+                class="w-4 h-4 text-blue-600"
+              ></lucide-angular> -->
+              <span class="text-sm font-medium text-black-60">Valor:</span>
+              <span class="text-sm text-black-50">Dr. Ana Silva</span>
+            </div>
+                        <div class="flex items-center gap-2">
+              <!-- <lucide-angular
+                [img]="Stethoscope"
+                class="w-4 h-4 text-blue-600"
+              ></lucide-angular> -->
+              <span class="text-sm font-medium text-black-60">Forma de Pagamento:</span>
+              <span class="text-sm text-black-50">Dr. Ana Silva</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <app-create-notion
-        *ngIf="isModal === true"
-        (closed)="showModal()"
-      ></app-create-notion>
-
-      <!-- Conteudo -->
-      <ul class="flex flex-col items-center">
-        <li *ngFor="let notion of notions; let i = index" class="w-full">
-          <!-- Messagens de Anotações -->
-          <NotionRow [notion]="notion" [index]="i"></NotionRow>
-        </li>
-      </ul>
     </div>
-  </aside>
-</body>
+  </div>
+</div>

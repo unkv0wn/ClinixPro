@@ -9,11 +9,16 @@ import {
   ChevronDown,
   Pin,
   Trash2,
+  PawPrint,
+  Heart,
+  ChevronRight,
 } from 'lucide-angular';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { NotionRowComponent } from '../../components/notion-row/notion-row.component';
-import { CreateNotionComponent } from "../../components/modals/create-notion/create-notion.component";
-import { NewConsultComponent } from "../../components/modals/new-consult/new-consult.component";
+import { CreateNotionComponent } from '../../components/modals/create-notion/create-notion.component';
+import { NewConsultComponent } from '../../components/modals/new-consult/new-consult.component';
+import { BasicCardComponent } from '../../components/basic-card/basic-card.component';
+import { ConsultCardComponent } from "../../components/consult-card/consult-card.component";
 
 @Component({
   selector: 'app-home',
@@ -25,7 +30,8 @@ import { NewConsultComponent } from "../../components/modals/new-consult/new-con
     NotionRowComponent,
     CommonModule,
     CreateNotionComponent,
-    NewConsultComponent
+    BasicCardComponent,
+    ConsultCardComponent
 ],
 })
 export class HomeComponent {
@@ -37,19 +43,20 @@ export class HomeComponent {
   readonly ChevronDown = ChevronDown;
   readonly Pin = Pin;
   readonly Trash = Trash2;
+  readonly paw = PawPrint;
+  readonly heart = Heart;
+  readonly Chevronleft = ChevronLeft;
+  readonly Chevronright = ChevronRight;
 
   /*Definição das variaveis */
   isOpen: number | null = null;
   isRotated: boolean = false;
   isModal: boolean = false;
   isModalConsult: boolean = false;
-   date: Date = new Date();
-   dia: number = this.date.getDate();
-   mes: string = (this.date.getMonth() + 1).toString().padStart(2, '0');
-   ano: number = this.date.getFullYear();
-
-
-
+  date: Date = new Date();
+  dia: number = this.date.getDate();
+  mes: string = (this.date.getMonth() + 1).toString().padStart(2, '0');
+  ano: number = this.date.getFullYear();
 
   /*Inicia instacia de mockup de dados como desmontração de uso serviço para os agendamentos */
   appointments = [
@@ -92,7 +99,10 @@ export class HomeComponent {
 
   /*Inicia instacia de mockup de dados como desmontração de uso serviço para os anotações */
   notions = [
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum  Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
+    {
+      message:
+        'Lorem Ipsum Lorem Ipsum Lorem Ipsum  Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
+    },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
     { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
@@ -116,7 +126,6 @@ export class HomeComponent {
   ShowModalConsult() {
     this.isModalConsult = !this.isModalConsult;
   }
-
 
   constructor() {}
 }

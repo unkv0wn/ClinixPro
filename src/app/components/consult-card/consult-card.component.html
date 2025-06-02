@@ -1,0 +1,95 @@
+<div
+  class="flex flex-col border border-gray-200 max-h-[300px] w-full rounded-lg mt-4  overflow-hidden shadow-md"
+>
+  <!-- Imagem do animal (imagem da web) -->
+  <div class="w-full h-58 bg-gray-200">
+    <img
+      [src]="photoUrl"
+      alt="Foto do animal"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Dados do animal -->
+  <div class="p-4 flex-1">
+    <!-- Nome -->
+    <div class="flex flex-row gap-2 items-center justify-between">
+      <div class="flex flex-row items-center gap-2">
+        <lucide-angular
+          [img]="paw"
+          class="text-blue-500"
+          [size]="20"
+        ></lucide-angular>
+        <h2 class="text-2xl font-bold text-black/80">{{ name }}</h2>
+      </div>
+      <div class="flex items-center mt-2" *ngIf="status === 'pending'">
+        <span
+          class="inline-block h-2 w-2 rounded-full bg-yellow-400 mr-1"
+        ></span>
+        <span class="text-sm font-medium text-yellow-400">Andamento</span>
+      </div>
+      <div class="flex items-center mt-2" *ngIf="status === 'completed'">
+        <span
+          class="inline-block h-2 w-2 rounded-full bg-green-400 mr-1"
+        ></span>
+        <span class="text-sm font-medium text-green-400">Concluido</span>
+      </div>
+    </div>
+    <!-- Genero -->
+    <div class="flex flex-row gap-2 items-center mt-3">
+      <lucide-angular
+        [img]="mars"
+        class="text-blue-500"
+        [size]="20"
+      ></lucide-angular>
+      <span class="text-sm font-semibold text-black/60">{{ gender }}</span>
+    </div>
+    <!-- Idade -->
+    <div class="flex flex-row gap-2 items-center mt-3">
+      <lucide-angular
+        [img]="Cake"
+        class="text-blue-500"
+        [size]="20"
+      ></lucide-angular>
+      <span class="text-sm font-semibold text-black/60">{{ age }} ano(s)</span>
+    </div>
+    <!-- Cidade -->
+    <div class="flex flex-row gap-2 items-center mt-3">
+      <lucide-angular
+        [img]="map"
+        class="text-blue-500"
+        [size]="20"
+      ></lucide-angular>
+      <span class="text-sm font-semibold text-black/60">{{ location }}</span>
+    </div>
+    <!-- Nome do adotante -->
+    <div class="flex flex-row gap-2 items-center mt-3">
+      <lucide-angular
+        [img]="user"
+        class="text-blue-500"
+        [size]="20"
+      ></lucide-angular>
+      <span class="text-sm font-semibold text-black/60">{{ adopter }}</span>
+    </div>
+    <!-- Contato do adotante -->
+    <div class="flex flex-row gap-2 items-center mt-3">
+      <lucide-angular
+        [img]="phoneIcon"
+        class="text-blue-500"
+        [size]="20"
+      ></lucide-angular>
+      <span class="text-sm font-semibold text-black/60">{{ phone }}</span>
+    </div>
+  </div>
+  <!-- Botão para ver mais -->
+  <div class="p-2 flex justify-between items-center bg-gray-50 text-center">
+    <div>
+      <span class="text-xs text-black/50 mt-4">12/05/2025</span>
+    </div>
+    <button
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+    >
+      Formulario
+    </button>
+  </div>
+</div>
