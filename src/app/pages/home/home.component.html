@@ -1,28 +1,28 @@
 <div class="flex flex-col mt-10 md:mt-0 md:flex-col h-full md:h-screen">
   <div class="flex-1 flex flex-row">
-    <div class="flex-1 flex flex-col p-6 gap-4">
+    <div class="flex-1 flex flex-col pl-6 pt-6 gap-4">
       <!-- Card 1 -->
       <BasicCard
         class="w-full h-full"
-        title="Animais disponiveis"
+        title="Total de Consultas"
         [icon]="paw"
         iconColor="text-yellow-500"
         [status]="'positive'"
-        [value]="127"
+        [value]="23"
         [percent]="12"
       ></BasicCard>
       <!-- Card 2 -->
       <BasicCard
         class="w-full h-full"
-        title="Total de adoções"
+        title="Consulta do dia"
         [icon]="heart"
         iconColor="text-red-500"
-        [status]="'negative'"
-        [value]="23"
+        [status]="'positive'"
+        [value]="8"
         [percent]="20"
       ></BasicCard>
     </div>
-    <div class="flex-2 flex justify-center items-center p-6">
+    <div class="flex-2 flex justify-center items-center pt-6 pl-2 pr-6">
       <!-- Lado direito - Conteúdo adicional -->
       <div class="w-full flex items-center">
         <div
@@ -55,9 +55,9 @@
       </div>
     </div>
   </div>
-  <div class="flex-2 p-6">
+  <div class="flex-2 pl-6 pr-6 pb-6 py-2">
     <div
-      class="flex h-full flex-col w-full rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-8"
+      class="flex h-full flex-col w-full rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.20)] p-6"
     >
       <div class="flex flex-row w-full justify-between">
         <div class="flex flex-row gap-2">
@@ -92,84 +92,132 @@
           ></Button>
         </div>
       </div>
-      <!-- Cards de adoção -->
+      <!-- Cards de consultas -->
       <div class="grid grid-cols-4 gap-4 h-full">
         <div
-          class="flex flex-col border border-gray-200 max-w-[320px] w-full rounded-lg mt-4 h-full overflow-hidden shadow-md p-4"
+          class="flex flex-col border border-gray-200 max-w-[320px] w-full rounded-lg mt-4 overflow-hidden shadow-md p-4"
         >
-          <div class="flex-1 flex">
-            <div class="flex-1 bg-amber-200 rounded-full">
-              <!-- Imagem do animal (imagem da web) -->
-              <div class="w-36 h-36 rounded-full overflow-hidden bg-gray-200">
-                <img
-                  src="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Foto do animal"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          <!-- Cabeçalho com imagem e horário -->
+          <div class="flex w-full">
+            <!-- Imagem do animal -->
             <div
-              class="flex-1 w-full flex flex-col justify-center items-center p-2"
+              class="w-28 h-28 rounded-full overflow-hidden bg-gray-200 flex-shrink-0"
             >
-              <div class="flex-1 flex w-full">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Foto do animal"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Informações de horário -->
+            <div
+              class="flex flex-col justify-center items-start ml-4 flex-1 space-y-2"
+            >
+              <div class="flex items-center gap-2">
                 <lucide-angular
                   [img]="Clock"
                   class="text-blue-primary"
                   [size]="24"
                 ></lucide-angular>
-                <h2 class="font-medium text-base ml-1 text-black/70">
-                  Horario
-                </h2>
+                <h2 class="font-medium text-sm text-black/70">Horário</h2>
               </div>
-              <div class="flex-3 flex w-full">
+              <div class="flex items-center gap-2">
                 <lucide-angular
                   [img]="Clock"
                   class="text-blue-primary"
                   [size]="24"
                 ></lucide-angular>
-                <h2 class="font-medium text-base ml-1 text-black/70">
-                  08:00 - 08:30
-                </h2>
+                <h2 class="font-medium text-sm text-black/70">08:00 - 08:30</h2>
               </div>
             </div>
           </div>
-          <div class="flex-1 p-2">
-            <h3 class="font-semibold text-black/60 text-lg mb-3">
-              Cria da silva
+
+          <!-- Informações da consulta -->
+          <div class="">
+            <h3 class="font-semibold text-black/60 text-base mb-2">
+              Cria da Silva
             </h3>
-            <div class="flex items-center gap-2">
-              <!-- <lucide-angular
-                [img]="Stethoscope"
-                class="w-4 h-4 text-blue-600"
-              ></lucide-angular> -->
-              <span class="text-sm font-medium text-black-60">Médico:</span>
-              <span class="text-sm text-black-50">Dr. Ana Silva</span>
+
+            <div class="">
+              <div class="flex justify-between">
+                <!-- Médico -->
+                <div class="flex items-center gap-3">
+                  <lucide-angular
+                    [img]="Stethoscope"
+                    class="w-4 h-4 text-blue-600 flex-shrink-0"
+                  ></lucide-angular>
+                  <div class="flex flex-col">
+                    <span
+                      class="text-xs font-medium text-gray-500 uppercase tracking-wide"
+                      >Médico</span
+                    >
+                    <span class="text-sm font-semibold text-gray-800"
+                      >Dr. Ana Silva</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Tipo da Consulta -->
+                <div class="flex items-center gap-3">
+                  <lucide-angular
+                    [img]="User"
+                    class="w-4 h-4 text-green-600 flex-shrink-0"
+                  ></lucide-angular>
+                  <div class="flex flex-col">
+                    <span
+                      class="text-xs font-medium text-gray-500 uppercase tracking-wide"
+                      >Tipo da Consulta</span
+                    >
+                    <span class="text-sm font-semibold text-gray-800"
+                      >Consulta de Rotina</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Valor -->
+              <div class="flex items-center gap-3">
+                <lucide-angular
+                  [img]="DollarSign"
+                  class="w-4 h-4 text-emerald-600 flex-shrink-0"
+                ></lucide-angular>
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-medium text-gray-500 uppercase tracking-wide"
+                    >Valor</span
+                  >
+                  <span class="text-base font-bold text-gray-800"
+                    >R$ 120,00</span
+                  >
+                </div>
+              </div>
+
+              <!-- Forma de Pagamento -->
+              <div class="flex items-center gap-3">
+                <lucide-angular
+                  [img]="CreditCard"
+                  class="w-4 h-4 text-purple-600 flex-shrink-0"
+                ></lucide-angular>
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-medium text-gray-500 uppercase tracking-wide"
+                    >Forma de Pagamento</span
+                  >
+                  <span class="text-sm font-semibold text-gray-800"
+                    >Cartão de Crédito</span
+                  >
+                </div>
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-              <!-- <lucide-angular
-                [img]="Stethoscope"
-                class="w-4 h-4 text-blue-600"
-              ></lucide-angular> -->
-              <span class="text-sm font-medium text-black-60"
-                >Tipo da Consulta:</span
+
+            <!-- Badge de status -->
+            <div class="mt-4 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-md"
               >
-              <span class="text-sm text-black-50">Dr. Ana Silva</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <!-- <lucide-angular
-                [img]="Stethoscope"
-                class="w-4 h-4 text-blue-600"
-              ></lucide-angular> -->
-              <span class="text-sm font-medium text-black-60">Valor:</span>
-              <span class="text-sm text-black-50">Dr. Ana Silva</span>
-            </div>
-                        <div class="flex items-center gap-2">
-              <!-- <lucide-angular
-                [img]="Stethoscope"
-                class="w-4 h-4 text-blue-600"
-              ></lucide-angular> -->
-              <span class="text-sm font-medium text-black-60">Forma de Pagamento:</span>
-              <span class="text-sm text-black-50">Dr. Ana Silva</span>
+                Agendado
+              </span>
             </div>
           </div>
         </div>

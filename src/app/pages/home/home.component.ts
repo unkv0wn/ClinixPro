@@ -12,6 +12,10 @@ import {
   PawPrint,
   Heart,
   ChevronRight,
+  Stethoscope,
+  User,
+  DollarSign,
+  CreditCard,
 } from 'lucide-angular';
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { NotionRowComponent } from '../../components/notion-row/notion-row.component';
@@ -47,6 +51,10 @@ export class HomeComponent {
   readonly heart = Heart;
   readonly Chevronleft = ChevronLeft;
   readonly Chevronright = ChevronRight;
+  readonly Stethoscope = Stethoscope
+  readonly User = User
+  readonly DollarSign = DollarSign
+  readonly CreditCard = CreditCard
 
   /*Definição das variaveis */
   isOpen: number | null = null;
