@@ -5,6 +5,7 @@ import {
   CheckCheck,
   Clock,
   LucideAngularModule,
+  MoreHorizontalIcon,
   Search,
   X,
 } from 'lucide-angular';
@@ -29,5 +30,5 @@ export class SchedulingComponent {
   readonly check = CheckCheck;
   readonly x = X;
   readonly search = Search;
-
+  readonly more = MoreHorizontalIcon
 }
