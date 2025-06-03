@@ -6,7 +6,6 @@ import { LucideAngularModule, TrendingDown, TrendingUp } from 'lucide-angular';
   selector: 'BasicCard',
   imports: [LucideAngularModule, CommonModule],
   templateUrl: './basic-card.component.html',
-  styleUrl: './basic-card.component.css',
 })
 export class BasicCardComponent {
   readonly trendinup = TrendingUp;
