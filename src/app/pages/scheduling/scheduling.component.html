@@ -43,16 +43,19 @@
   </div>
   <div class="flex-1 flex pl-4 pr-4 items-center">
     <!-- filters.component.html -->
-    <div class=" w-full shadow-[0_0_8px_rgba(0,0,0,0.20)] rounded-lg">
+    <div class="w-full shadow-[0_0_8px_rgba(0,0,0,0.20)] rounded-lg">
       <div class="p-4">
         <div class="flex flex-wrap items-center gap-4">
           <!-- Campo de busca -->
           <div class="relative flex-1 min-w-64">
-            <lucide-angular [img]="search" class="absolute left-1 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400">
+            <lucide-angular
+              [img]="search"
+              class="absolute left-1 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
+            >
             </lucide-angular>
             <input
               type="text"
-              class="pl-10 appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-lg px-3 py-3 text-black/60 text-sm w-full  font-medium leading-tight focus:outline-none focus:shadow-outline"
+              class="pl-10 appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-lg px-3 py-3 text-black/60 text-sm w-full font-medium leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Buscar por paciente, médico ou protocolo..."
             />
           </div>
@@ -60,8 +63,7 @@
           <!-- Select de Status -->
           <div>
             <select
-              
-              class="w-40 shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-md px-3 py-3 text-sm focus:outline-none "
+              class="w-40 shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-md px-3 py-3 text-sm focus:outline-none"
             >
               <option value="">Todos Status</option>
               <option value="agendada">Agendada</option>
@@ -95,7 +97,92 @@
       </div>
     </div>
   </div>
-  <div class="flex-4 flex pl-4 pr-4 bg-cyan-700">
-    
+  <div class="flex-4 flex pl-4 pr-4">
+    <article
+      class="bg-white h-full w-full flex flex-col p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
+    >
+      <!-- Titulo  -->
+      <div class="flex flex-row justify-between items-center">
+        <IconHeader [Icon]="Clock" Title="Lista de Consultas"></IconHeader>
+      </div>
+      <!-- Tabela de dados  -->
+      <div
+        class="max-h-[408px] overflow-y-auto scroll-smooth rounded-lg shadow-[0_0_4px_rgba(0,0,0,0.25)] scroll-container"
+      >
+        <table class="p-2 w-full h-full">
+          <thead class="rounded-t-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
+            <tr>
+              <th class="p-2 text-left text-black/40 font-base w-1/12">
+                Protocolo
+              </th>
+              <th class="p-2 text-left text-black/40 w-1/5">Paciente</th>
+              <th class="p-2 text-left text-black/40 w-1/5">Medico</th>
+              <th class="p-2 text-left text-black/40 w-1/6">Tipo</th>
+              <th class="p-2 text-left text-black/40 w-1/12">Data/hora</th>
+              <th class="p-2 text-left text-black/40 w-1/12">Status</th>
+              <th class="p-2 text-left text-black/40 w-1/11">Valor</th>
+              <th class="p-2 text-left text-black/40 w-1/6">Ações</th>
+            </tr>
+          </thead>
+          <tbody class="rounded-b-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
+            <tr
+              *ngFor="let notion of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              class="shadow-[0_0_2px_rgba(0,0,0,0.25)]"
+            >
+              <td class="p-2 text-black/60 font-medium text-base">1</td>
+
+              <td class="p-2 text-black/60 font-medium">
+                <div>
+                  <p class="font-medium">Matheus Fraga</p>
+                  <p class="text-xs text-gray-500 flex items-center">
+                    <!-- <Phone class="h-3 w-3 mr-1" /> -->
+                    11 9876-9080
+                  </p>
+                </div>
+              </td>
+              <td class="p-2 text-black/60 font-medium">
+                <div>
+                  <p class="font-medium">Dr Ana Luisa</p>
+                  <p class="text-xs text-gray-500 flex items-center">
+                    <!-- <Phone class="h-3 w-3 mr-1" /> -->
+                    11 9876-9080
+                  </p>
+                </div>
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                Quiropraxiaa
+              </td>
+              <td class="p-2 text-black/60 font-medium">
+                <div>
+                  <p class="font-medium">10/06/2025</p>
+                  <p class="text-xs text-gray-500 flex items-center">
+                    <!-- <Phone class="h-3 w-3 mr-1" /> -->
+                    08:00
+                  </p>
+                </div>
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base">agendado</td>
+              <td class="p-2 text-black/60 font-medium">
+                <div>
+                  <p class="font-medium">280,00</p>
+                  <p class="text-xs text-gray-500 flex items-center">
+                    <!-- <Phone class="h-3 w-3 mr-1" /> -->
+                    Credito
+                  </p>
+                </div>
+              </td>
+              <td class="p-2 text-black/60 font-medium text-base text-left">
+                <button
+                  class="text-black/70 hover:text-blue-primary rounded-full p-1"
+                  aria-label="Ações"
+                >
+                  <lucide-angular [img]="Clock" [size]="20"></lucide-angular>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
   </div>
 </div>
