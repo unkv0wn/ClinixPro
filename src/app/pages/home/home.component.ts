@@ -20,9 +20,7 @@ import {
 import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
 import { NotionRowComponent } from '../../components/notion-row/notion-row.component';
 import { CreateNotionComponent } from '../../components/modals/create-notion/create-notion.component';
-import { NewConsultComponent } from '../../components/modals/new-consult/new-consult.component';
 import { BasicCardComponent } from '../../components/basic-card/basic-card.component';
-import { ConsultCardComponent } from "../../components/consult-card/consult-card.component";
 
 @Component({
   selector: 'app-home',
@@ -35,7 +33,7 @@ import { ConsultCardComponent } from "../../components/consult-card/consult-card
     CommonModule,
     CreateNotionComponent,
     BasicCardComponent,
-    ConsultCardComponent
+
 ],
 })
 export class HomeComponent {
@@ -47,7 +45,6 @@ export class HomeComponent {
   readonly ChevronDown = ChevronDown;
   readonly Pin = Pin;
   readonly Trash = Trash2;
-  readonly paw = PawPrint;
   readonly heart = Heart;
   readonly Chevronleft = ChevronLeft;
   readonly Chevronright = ChevronRight;

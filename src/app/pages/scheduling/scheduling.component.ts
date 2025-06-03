@@ -1,60 +1,30 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  Calendar1Icon,
+  CheckCheck,
+  Clock,
   LucideAngularModule,
-  Users,
-  Camera,
   Search,
-  Trash2,
-  Printer,
-  FileText,
-  Plus,
+  X,
 } from 'lucide-angular';
-import { IconHeaderComponent } from '../../components/icon-header/icon-header.component';
-import { NewConsultComponent } from '../../components/modals/new-consult/new-consult.component';
+
+import { BasicCardComponent } from "../../components/basic-card/basic-card.component";
 
 @Component({
   selector: 'app-scheduling',
   imports: [
     LucideAngularModule,
     CommonModule,
-    IconHeaderComponent,
-    NewConsultComponent,
-  ],
+    BasicCardComponent
+],
   templateUrl: './scheduling.component.html',
   styleUrl: './scheduling.component.css',
 })
 export class SchedulingComponent {
-  readonly Users = Users;
-  readonly Camera = Camera;
-  readonly Seach = Search;
-  readonly Trash = Trash2;
-  readonly Printer = Printer;
-  readonly TableOfContents = FileText;
-  readonly Plus = Plus;
-
-  isModal: boolean = false;
-  isModalConsult: boolean = false;
-
-  notions = [
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-    { message: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' },
-  ];
-
-  ShowModalConsult() {
-    this.isModalConsult = !this.isModalConsult;
-  }
+  readonly calendar = Calendar1Icon
+  readonly Clock = Clock
+  readonly check = CheckCheck
+  readonly x = X
+  readonly search = Search
 }

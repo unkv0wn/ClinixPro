@@ -1,183 +1,101 @@
-<body class="flex flex-col h-full">
-  <!-- Parte de Cima - Card de detalhes -->
-  <section class="flex-1 flex justify-start">
-    <article
-      class="bg-white w-1/2 h-10/12 flex flex-col mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
-    >
-      <!-- Titulo -->
-      <IconHeader [Icon]="Users" Title="Detalhes Consulta"></IconHeader>
-      <!-- Conteudo -->
-      <div class="flex flex-row h-full">
-        <!-- Container lado esquerdo -->
-        <div class="w-1/3 h-full">
-          <!-- Imagem de foto -->
-          <div
-            class="w-42 h-42 rounded-full flex justify-center items-center shadow-[0_0_4px_rgba(0,0,0,0.25)]"
-          >
-            <lucide-angular
-              [img]="Camera"
-              class="text-black/40 hover:text-blue-primary"
-              [size]="38"
-            ></lucide-angular>
+<div class="flex flex-col h-full w-full p-6">
+  <div class="flex-1 flex flex-row p-4 gap-4">
+    <!-- Card 1 -->
+    <BasicCard
+      class="w-full h-full"
+      title="Total"
+      [icon]="calendar"
+      iconColor="text-blue-500"
+      [status]="'positive'"
+      [value]="23"
+      [percent]="12"
+    ></BasicCard>
+    <!-- Card 1 -->
+    <BasicCard
+      class="w-full h-full"
+      title="Agendadas"
+      [icon]="Clock"
+      iconColor="text-yellow-500"
+      [status]="'positive'"
+      [value]="23"
+      [percent]="12"
+    ></BasicCard>
+    <!-- Card 1 -->
+    <BasicCard
+      class="w-full h-full"
+      title="Concluidas"
+      [icon]="check"
+      iconColor="text-green-500"
+      [status]="'positive'"
+      [value]="23"
+      [percent]="12"
+    ></BasicCard>
+    <!-- Card 1 -->
+    <BasicCard
+      class="w-full h-full"
+      title="Canceladas"
+      [icon]="x"
+      iconColor="text-red-500"
+      [status]="'positive'"
+      [value]="23"
+      [percent]="12"
+    ></BasicCard>
+  </div>
+  <div class="flex-1 flex pl-4 pr-4 items-center">
+    <!-- filters.component.html -->
+    <div class=" w-full shadow-[0_0_8px_rgba(0,0,0,0.20)] rounded-lg">
+      <div class="p-4">
+        <div class="flex flex-wrap items-center gap-4">
+          <!-- Campo de busca -->
+          <div class="relative flex-1 min-w-64">
+            <lucide-angular [img]="search" class="absolute left-1 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400">
+            </lucide-angular>
+            <input
+              type="text"
+              class="pl-10 appearance-none shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-lg px-3 py-3 text-black/60 text-sm w-full  font-medium leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Buscar por paciente, médico ou protocolo..."
+            />
           </div>
-          <!-- Dados basicos do paciente  -->
-          <div class="flex flex-col mt-11">
-            <span class="font-semibold text-base text-black/90">
-              Matheus Fraga da silva
-            </span>
-            <span class="font-semibold text-base text-black/60">
-              (44) 98438-6891
-            </span>
-          </div>
-        </div>
-        <!-- Segunda divisao -->
-        <div class="w-full h-full p-2">
-          <div class="flex justify-between">
-            <!-- Dados mais detalhados do paciente -->
-            <div class="flex flex-col">
-              <span class="font-semibold text-base text-black/90"> ID </span>
-              <span class="font-medium text-sm text-black/60"> 222233 </span>
-            </div>
-            <div class="flex flex-col">
-              <span class="font-semibold text-base text-black/90">
-                Tipo Consulta
-              </span>
-              <span class="font-medium text-sm text-black/60">
-                Check-up Geral
-              </span>
-            </div>
-            <div class="flex flex-col">
-              <span class="font-semibold text-base text-black/90">
-                Ultima Consulta
-              </span>
-              <span class="font-medium text-sm text-black/60">
-                31/03/1990
-              </span>
-            </div>
-            <div class="flex flex-col">
-              <span class="font-semibold text-base text-black/90">
-                Valor Total
-              </span>
-              <span class="font-medium text-sm text-black/60"> 270.00 </span>
-            </div>
-          </div>
-          <!-- Observação do paciente  -->
-          <div class="flex justify-between mt-6">
-            <div class="flex flex-col">
-              <span class="font-semibold text-base text-black/90">
-                Observação
-              </span>
-              <span class="font-medium text-sm text-black/60 break-words">
-                "Paciente relatou dores intensas na região lombar, iniciadas há
-                aproximadamente cinco dias após levantar um objeto pesado. Ele
-                descreve a dor como latejante e contínua, com piora ao se
-                movimentar ou permanecer sentado por longos períodos. Informou
-                que tentou alívio com analgésicos comuns, mas sem melhora
-                significativa. Além disso, menciona sensação de formigamento na
-                perna esquerda e dificuldade ao caminhar. Não apresenta
-                histórico prévio de problemas na coluna, mas relata que já teve
-                desconfortos semelhantes em ocasiões anteriores, embora de menor
-                intensidade e curta duração. Paciente nega febre, perda de peso
-                ou outros sintomas associados.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
 
-  <!-- Parte Baixo - Tabela -->
-  <section class="flex-1">
-    <article
-      class="bg-white h-10/12 flex flex-col mr-11 ml-11 mt-10 p-8 rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.25)]"
-    >
-      <!-- Titulo -->
-      <div class="flex flex-row justify-between items-center">
-        <IconHeader
-          [Icon]="TableOfContents"
-          Title="Lista de Consultas"
-        ></IconHeader>
-        <div class="-mt-4">
-          <button
-            class="group flex flex-row bg-black/4 hover:bg-blue-primary rounded-md text-xs font-medium p-2 w-full cursor-pointer items-center hover:text-white"
-            type="button"
-            (click)="ShowModalConsult()"
+          <!-- Select de Status -->
+          <div>
+            <select
+              
+              class="w-40 shadow-[0_0_2px_rgba(0,0,0,0.25)] rounded-md px-3 py-3 text-sm focus:outline-none "
+            >
+              <option value="">Todos Status</option>
+              <option value="agendada">Agendada</option>
+              <option value="em-andamento">Em Andamento</option>
+              <option value="concluida">Concluída</option>
+              <option value="cancelada">Cancelada</option>
+            </select>
+          </div>
+
+          <!-- Select de Médicos -->
+          <!-- Botões -->
+          <!-- <button
+            class="border border-gray-300 rounded-md p-2 hover:bg-gray-100"
+            
           >
-            <lucide-angular
-              [img]="Plus"
-              class="text-black/70 group-hover:text-white"
-              [size]="20"
-            ></lucide-angular>
-            <span
-              class="ml-2 mr-2 text-base font-semibold text-black/70 group-hover:text-white"
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
             >
-              Adicionar
-            </span>
-          </button>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 4v6h6M20 20v-6h-6M4 20l5-5m10-10l-5 5"
+              />
+            </svg>
+          </button> -->
         </div>
-        <app-new-consult
-          *ngIf="isModalConsult === true"
-          (closed)="ShowModalConsult()"
-        ></app-new-consult>
       </div>
-      <!-- Tabela de dados -->
-      <div
-        class="max-h-80 overflow-y-auto scroll-smooth rounded-lg shadow-[0_0_4px_rgba(0,0,0,0.25)] scroll-container"
-      >
-        <table class="p-2 w-full h-full">
-          <thead class="rounded-t-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
-            <tr>
-              <th class="p-2 text-left text-black/40 font-base w-1/12">
-                Protocolo
-              </th>
-              <th class="p-2 text-left text-black/40 w-1/4">Paciente</th>
-              <th class="p-2 text-left text-black/40 w-1/10">Tipo Consulta</th>
-              <th class="p-2 text-left text-black/40 w-1/12">Data</th>
-              <th class="p-2 text-left text-black/40 w-1/12">Valor</th>
-              <th class="p-2 text-left text-black/40 w-1/6">Ações</th>
-            </tr>
-          </thead>
-          <tbody class="rounded-b-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
-            <tr
-              *ngFor="let notion of notions"
-              class="shadow-[0_0_2px_rgba(0,0,0,0.25)]"
-            >
-              <td class="p-2 text-black/60 font-medium text-base">1</td>
-              <td class="p-2 text-black/60 font-medium text-base">
-                Matheus Fraga
-              </td>
-              <td class="p-2 text-black/60 font-medium text-base">Check-up</td>
-              <td class="p-2 text-black/60 font-medium text-base">
-                10/19/1990
-              </td>
-              <td class="p-2 text-black/60 font-medium text-base">
-                270.00
-              </td>
-              <td class="p-2 text-black/60 font-medium text-base text-left">
-                <button
-                  class="text-black/70 hover:text-blue-primary rounded-full p-1"
-                  aria-label="Ações"
-                >
-                  <lucide-angular [img]="Seach" [size]="20"></lucide-angular>
-                </button>
-                <button
-                  class="text-black/70 hover:text-blue-primary rounded-full p-1 ml-2"
-                  aria-label="Ações"
-                >
-                  <lucide-angular [img]="Printer" [size]="20"></lucide-angular>
-                </button>
-                <button
-                  class="text-black/70 hover:text-blue-primary rounded-full p-1 ml-2"
-                  aria-label="Ações"
-                >
-                  <lucide-angular [img]="Trash" [size]="20"></lucide-angular>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </article>
-  </section>
-</body>
+    </div>
+  </div>
+  <div class="flex-4 flex pl-4 pr-4 bg-cyan-700">
+    
+  </div>
+</div>
