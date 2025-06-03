@@ -35,15 +35,15 @@ export class SchedulingComponent {
   getStatusColor(status: string): string {
     switch (status) {
       case 'Agendada':
-        return 'rounded-lg py-1 px-2 items-center justify-center bg-blue-100 text-blue-800';
+        return 'rounded-lg py-2 px-2 items-center justify-center bg-blue-100 text-blue-800';
       case 'Andamento':
-        return 'rounded-lg py-1 px-2 items-center justify-center bg-yellow-100 text-yellow-800';
+        return 'rounded-lg py-2 px-2 items-center justify-center bg-yellow-100 text-yellow-800';
       case 'Concluída':
-        return 'rounded-lg py-1 px-2 items-center justify-center bg-green-100 text-green-800';
+        return 'rounded-lg py-2 px-2 items-center justify-center bg-green-100 text-green-800';
       case 'Cancelada':
-        return 'rounded-lg py-1 px-2 items-center justify-center bg-red-100 text-red-800';
+        return 'rounded-lg py-2 px-2 items-center justify-center bg-red-100 text-red-800';
       default:
-        return 'rounded-lg py-1 px-2 items-center justify-center bg-gray-100 text-gray-800';
+        return 'rounded-lg py-2 px-2 items-center justify-center bg-gray-100 text-gray-800';
     }
   }
 }
