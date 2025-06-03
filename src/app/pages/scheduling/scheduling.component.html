@@ -115,13 +115,27 @@
               <th class="p-2 text-left font-medium text-gray-500 w-1/12">
                 Protocolo
               </th>
-              <th class="p-2 text-left font-medium text-gray-500 w-1/5">Paciente</th>
-              <th class="p-2 text-left font-medium text-gray-500 w-1/5">Medico</th>
-              <th class="p-2 text-left font-medium text-gray-500 w-1/6">Tipo</th>
-              <th class="p-2 text-left font-medium text-gray-500 w-1/12">Data/Hora</th>
-              <th class="p-2 text-left font-medium text-gray-500 w-1/12">Status</th>
-              <th class="p-2 text-left font-medium text-gray-500 w-1/11">Valor</th>
-              <th class="p-2 text-left font-medium text-gray-500 w-1/6">Ações</th>
+              <th class="p-2 text-left font-medium text-gray-500 w-1/5">
+                Paciente
+              </th>
+              <th class="p-2 text-left font-medium text-gray-500 w-1/5">
+                Medico
+              </th>
+              <th class="p-2 text-left font-medium text-gray-500 w-1/6">
+                Tipo
+              </th>
+              <th class="p-2 text-left font-medium text-gray-500 w-1/12">
+                Data/Hora
+              </th>
+              <th class="p-2 text-left font-medium text-gray-500 w-1/12">
+                Status
+              </th>
+              <th class="p-2 text-left font-medium text-gray-500 w-1/11">
+                Valor
+              </th>
+              <th class="p-2 text-left font-medium text-gray-500 w-1/6">
+                Ações
+              </th>
             </tr>
           </thead>
           <tbody class="rounded-b-lg shadow-[0_0_2px_rgba(0,0,0,0.25)]">
@@ -161,7 +175,11 @@
                   </p>
                 </div>
               </td>
-              <td class="p-2 text-black/60 font-medium text-base">agendado</td>
+              <td class="p-2 text-black/60 font-medium text-base">
+                <span [ngClass]="getStatusColor('Agendada')">
+                  Agendado
+                </span>
+              </td>
               <td class="p-2 text-black/60 font-medium">
                 <div>
                   <p class="font-medium">280,00</p>
